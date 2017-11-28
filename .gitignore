@@ -1,0 +1,17 @@
+# Modules
+node_modules
+
+# Json
+package.json
+
+# Sass
+.sass-cache
+*.css.map
+
+# VS Code
+.vscode
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
