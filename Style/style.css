@@ -3,6 +3,21 @@
   margin: 0;
   padding: 0;
 }
+
+#header {
+  width: 100vw;
+  height: 100vh;
+}
+
+#header #heroVideoAndAudioContainer {
+  width: 100vw;
+  position: absolute;
+}
+
+#header #heroVideoAndAudioContainer video {
+  width: 100vw;
+  background-size: cover;
+}
  
 
  /*# sourceMappingURL= style.css.map */

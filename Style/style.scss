@@ -3,3 +3,18 @@
 	margin: 0;
 	padding: 0;
 }
+
+#header {
+	width: 100vw;
+	height: 100vh;
+
+	#heroVideoAndAudioContainer {
+		width: 100vw;
+		position: absolute;
+
+		video {
+			width: 100vw;
+			background-size: cover;
+		}
+	}
+}
