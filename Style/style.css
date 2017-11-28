@@ -4,17 +4,22 @@
   padding: 0;
 }
 
-#header {
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+#landing {
   width: 100vw;
   height: 100vh;
 }
 
-#header #heroVideoAndAudioContainer {
+#landing #heroVideoAndAudioContainer {
   width: 100vw;
   position: absolute;
 }
 
-#header #heroVideoAndAudioContainer video {
+#landing #heroVideoAndAudioContainer video {
   width: 100vw;
   background-size: cover;
 }

@@ -1,10 +1,24 @@
+$grey-light: #928E94;
+$grey-dark: #5D5C61;
+$blue-light: #7995AC;
+$blue-dark: #5C7A92;
+$purple-light: #7F697A;
+$purple-dark: #604A5B;
+$red-dark: #491E1E;
+$red-darker: #2A1315;
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-#header {
+body {
+	background-color: black;
+	overflow: hidden;
+}
+
+#landing {
 	width: 100vw;
 	height: 100vh;
 
