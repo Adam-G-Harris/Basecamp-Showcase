@@ -16,12 +16,13 @@ window.onload = () => {
 		left: '0',
 		top: '0',
 		radius: sqrSize,
-		fill: 'none', // MOVE MENU TO LEFT SIDE THEN HAVE BASECAMP TEXT GO OVER TO LEFT BUT VERTICAL
+		fill: 'none',
 		stroke: 'white',
 		strokeWidth: 0.5,
 		isShowStart: true
-	}
+	};
 
+	// Menu parts
 	let sqrTL = new mojs.Shape({
 		...SQUARE,
 		x: lPos,
@@ -46,4 +47,18 @@ window.onload = () => {
 		y: lPos
 	});
 
+
+	/* End menu icon */
+
+
+	/* Start Basecamp text */
+
+
+	let basecampText = anime({
+		targets: '#heroSvg #gSvg path',
+		strokeDashoffset: [anime.setDashoffset, 0],
+		easing: 'easeInOutSine',
+		duration: 1500,
+		delay: function (el, i) { return i * 200 }
+	});
 }
