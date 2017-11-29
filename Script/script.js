@@ -54,22 +54,37 @@ window.onload = () => {
 	/* Start Basecamp text */
 
 
-	const basecampText = anime({
+	const basecampText = anime.timeline();
+
+	basecampText
+		.add({
+			targets: '#heroSvg #gSvg path',
+			strokeDashoffset: [anime.setDashoffset, 0],
+			easing: 'easeInOutSine',
+			duration: 1500,
+			delay: function (el, i) { return i * 200 },
+		})
+		.add({
+			targets: '#heroSvg #gPoly polygon',
+			strokeDashoffset: [anime.setDashoffset, 0],
+			easing: 'easeInOutSine',
+			offset: '-=500'
+		});
+
+	/*const baseText = anime({
 		targets: '#heroSvg #gSvg path',
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
 		duration: 1500,
 		delay: function (el, i) { return i * 200 },
-		complete: () => {
-			baseLine();
-		}
-	});
+	});*/
 
-	const baseLine = () => { //FIX this trouble with the line under Basecamp
+	/*const baseLine = () => {
 		let newLine = anime({
 			targets: '#heroSvg #gPoly polygon',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeInOutSine'
 		})
-	}
-}
+	}*/
+};
+// End
