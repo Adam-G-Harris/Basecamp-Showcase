@@ -54,11 +54,22 @@ window.onload = () => {
 	/* Start Basecamp text */
 
 
-	let basecampText = anime({
+	const basecampText = anime({
 		targets: '#heroSvg #gSvg path',
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
 		duration: 1500,
-		delay: function (el, i) { return i * 200 }
+		delay: function (el, i) { return i * 200 },
+		complete: () => {
+			baseLine();
+		}
 	});
+
+	const baseLine = () => { //FIX this trouble with the line under Basecamp
+		let newLine = anime({
+			targets: '#heroSvg #gPoly polygon',
+			strokeDashoffset: [anime.setDashoffset, 0],
+			easing: 'easeInOutSine'
+		})
+	}
 }
