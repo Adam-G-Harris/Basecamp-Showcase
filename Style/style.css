@@ -17,6 +17,7 @@ body {
 #landing #heroVideoAndAudioContainer {
   width: 100vw;
   position: absolute;
+  z-index: -1;
 }
 
 #landing #heroVideoAndAudioContainer video {

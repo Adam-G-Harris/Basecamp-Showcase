@@ -25,6 +25,7 @@ body {
 	#heroVideoAndAudioContainer {
 		width: 100vw;
 		position: absolute;
+		z-index: -1;
 
 		video {
 			width: 100vw;
