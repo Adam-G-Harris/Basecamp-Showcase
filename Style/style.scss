@@ -32,4 +32,17 @@ body {
 			background-size: cover;
 		}
 	}
+
+	#svgWrapper {
+		position: relative;
+		display: flex;
+		height: inherit;
+		justify-content: center;
+
+		#heroSvg {
+			width: 389px;
+			height: 49px;
+			align-self: center;
+		}
+	}
 }

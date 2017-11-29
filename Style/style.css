@@ -24,6 +24,19 @@ body {
   width: 100vw;
   background-size: cover;
 }
+
+#landing #svgWrapper {
+  position: relative;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+}
+
+#landing #svgWrapper svg {
+  width: 389px;
+  height: 49px;
+  align-self: center;
+}
  
 
  /*# sourceMappingURL= style.css.map */
