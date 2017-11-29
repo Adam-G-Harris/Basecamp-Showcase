@@ -56,6 +56,7 @@ window.onload = () => {
 
 	const basecampText = anime.timeline();
 
+	// Main animation
 	basecampText
 		.add({
 			targets: '#heroSvg #gSvg path',
@@ -65,26 +66,18 @@ window.onload = () => {
 			delay: function (el, i) { return i * 200 },
 		})
 		.add({
-			targets: '#heroSvg #gPoly polygon',
+			targets: '#heroSvg #gPoly polyline',
 			strokeDashoffset: [anime.setDashoffset, 0],
-			easing: 'easeInOutSine',
-			offset: '-=500'
+			easing: 'easeOutQuint',
+			duration: 2000,
+			offset: '-=300'
 		});
 
-	/*const baseText = anime({
-		targets: '#heroSvg #gSvg path',
-		strokeDashoffset: [anime.setDashoffset, 0],
-		easing: 'easeInOutSine',
-		duration: 1500,
-		delay: function (el, i) { return i * 200 },
-	});*/
 
-	/*const baseLine = () => {
-		let newLine = anime({
-			targets: '#heroSvg #gPoly polygon',
-			strokeDashoffset: [anime.setDashoffset, 0],
-			easing: 'easeInOutSine'
-		})
-	}*/
+	/* End Basecamp text */
+
+
+	/* End all */
+
+
 };
-// End
