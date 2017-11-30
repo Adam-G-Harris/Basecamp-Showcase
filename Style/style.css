@@ -38,6 +38,10 @@ body {
   padding-left: 25vw;
   padding-right: 25vw;
 }
+
+#landing #svgWrapper #heroSvg .singlePath {
+  transform-origin: 50% 50%;
+}
  
 
  /*# sourceMappingURL= style.css.map */

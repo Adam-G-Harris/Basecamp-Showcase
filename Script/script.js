@@ -1,6 +1,5 @@
 window.onload = () => {
 
-	console.log(window.innerWidth / 4);
 
 	/* Start menu icon */
 
@@ -63,14 +62,14 @@ window.onload = () => {
 
 		//- Initial draw
 		.add({
-			targets: '#heroSvg #gSvg path',
+			targets: '.gSvg path',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeInOutSine',
 			duration: 1500,
 			delay: (el, i) => { return i * 200 },
 		})
 		.add({
-			targets: '#heroSvg #gPoly polyline',
+			targets: '#gPoly polyline',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeOutQuint',
 			duration: 2000
@@ -78,14 +77,14 @@ window.onload = () => {
 
 		//- Split
 		.add({
-			targets: '#heroSvg .baseGroup',
+			targets: '.baseGroup',
 			translateX: -5,
 			easing: 'easeOutQuint',
 			duration: 2000,
 			offset: '-=2000'
 		})
 		.add({
-			targets: '#heroSvg .campGroup',
+			targets: '.campGroup',
 			translateX: 5,
 			easing: 'easeOutQuint',
 			duration: 2000,
@@ -94,24 +93,8 @@ window.onload = () => {
 
 		//- Side transition
 		.add({
-			targets: '#heroSvg #centerLine',
-			opacity: 0,
-			easing: 'linear',
-			duration: 2000,
-		})
-		.add({
-			targets: '#heroSvg .baseGroup',
-			origin: 0,
-			translateX: -(window.innerWidth / 4), // Work with transforming the origin of 'base' & 'camp' in css.
-			easing: 'linear',
-			duration: 2000,
-			offset: '-=2000'
-		})
-		.add({
-			targets: '#heroSvg .campGroup',
-			origin: 0,
-			translateX: window.innerWidth / 4, // See above... fix.
-			easing: 'linear',
+			targets: '#heroSvg',
+			easing: 'easeOutQuint',
 			duration: 2000,
 			offset: '-=2000'
 		});
