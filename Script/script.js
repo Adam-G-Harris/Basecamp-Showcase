@@ -1,5 +1,6 @@
 window.onload = () => {
 
+	console.log(window.innerWidth / 4);
 
 	/* Start menu icon */
 
@@ -16,7 +17,8 @@ window.onload = () => {
 		left: '0',
 		top: '0',
 		radius: sqrSize,
-		fill: 'none',
+		fill: 'white',
+		fillOpacity: 0.1,
 		stroke: 'white',
 		strokeWidth: 0.5,
 		isShowStart: true
@@ -56,8 +58,10 @@ window.onload = () => {
 
 	const basecampText = anime.timeline();
 
-	// Main animation
+	// Main animation timeline
 	basecampText
+
+		//- Initial draw
 		.add({
 			targets: '#heroSvg #gSvg path',
 			strokeDashoffset: [anime.setDashoffset, 0],
@@ -71,17 +75,43 @@ window.onload = () => {
 			easing: 'easeOutQuint',
 			duration: 2000
 		})
+
+		//- Split
 		.add({
-			targets: '#heroSvg .baseGroup1',
+			targets: '#heroSvg .baseGroup',
 			translateX: -5,
 			easing: 'easeOutQuint',
 			duration: 2000,
 			offset: '-=2000'
 		})
 		.add({
-			targets: '#heroSvg .baseGroup2',
+			targets: '#heroSvg .campGroup',
 			translateX: 5,
 			easing: 'easeOutQuint',
+			duration: 2000,
+			offset: '-=2000'
+		})
+
+		//- Side transition
+		.add({
+			targets: '#heroSvg #centerLine',
+			opacity: 0,
+			easing: 'linear',
+			duration: 2000,
+		})
+		.add({
+			targets: '#heroSvg .baseGroup',
+			origin: 0,
+			translateX: -(window.innerWidth / 4), // Work with transforming the origin of 'base' & 'camp' in css.
+			easing: 'linear',
+			duration: 2000,
+			offset: '-=2000'
+		})
+		.add({
+			targets: '#heroSvg .campGroup',
+			origin: 0,
+			translateX: window.innerWidth / 4, // See above... fix.
+			easing: 'linear',
 			duration: 2000,
 			offset: '-=2000'
 		});
