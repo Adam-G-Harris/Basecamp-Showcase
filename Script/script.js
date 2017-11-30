@@ -63,14 +63,27 @@ window.onload = () => {
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeInOutSine',
 			duration: 1500,
-			delay: function (el, i) { return i * 200 },
+			delay: (el, i) => { return i * 200 },
 		})
 		.add({
 			targets: '#heroSvg #gPoly polyline',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeOutQuint',
+			duration: 2000
+		})
+		.add({
+			targets: '#heroSvg .baseGroup1',
+			translateX: -5,
+			easing: 'easeOutQuint',
 			duration: 2000,
-			offset: '-=300'
+			offset: '-=2000'
+		})
+		.add({
+			targets: '#heroSvg .baseGroup2',
+			translateX: 5,
+			easing: 'easeOutQuint',
+			duration: 2000,
+			offset: '-=2000'
 		});
 
 

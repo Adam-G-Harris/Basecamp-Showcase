@@ -33,8 +33,10 @@ body {
 }
 
 #landing #svgWrapper #heroSvg {
-  width: 50vw;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 25vw;
+  padding-right: 25vw;
 }
  
 
