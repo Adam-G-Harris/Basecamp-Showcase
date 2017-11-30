@@ -6,6 +6,7 @@
 
 body {
   background-color: black;
+  font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
   overflow: hidden;
 }
 
@@ -17,7 +18,6 @@ body {
 #landing #heroVideoAndAudioContainer {
   width: inherit;
   position: absolute;
-  z-index: -1;
 }
 
 #landing #heroVideoAndAudioContainer video {
@@ -35,12 +35,26 @@ body {
 #landing #svgWrapper #heroSvg {
   width: 100vw;
   height: 100vh;
-  padding-left: 25vw;
-  padding-right: 25vw;
+  padding-left: 35vw;
+  padding-right: 35vw;
+  padding-top: 85vh;
+  transition: padding 3s;
 }
 
-#landing #svgWrapper #heroSvg .singlePath {
-  transform-origin: 50% 50%;
+#landing #menu {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  width: inherit;
+  top: 0;
+  left: 0;
+}
+
+#landing #menu p {
+  font-weight: 100;
+  margin: 1.5vw 2.5vw;
+  letter-spacing: 2px;
 }
  
 

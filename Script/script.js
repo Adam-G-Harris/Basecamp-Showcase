@@ -62,42 +62,44 @@ window.onload = () => {
 
 		//- Initial draw
 		.add({
-			targets: '.gSvg path',
+			targets: '#heroSvg .gSvg path',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeInOutSine',
+			strokeWidth: 0.4,
 			duration: 1500,
-			delay: (el, i) => { return i * 200 },
+			delay: (el, i) => { return i * 200 }
 		})
 		.add({
-			targets: '#gPoly polyline',
+			targets: '#heroSvg #gPoly polyline',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeOutQuint',
-			duration: 2000
+			duration: 1500
 		})
-
-		//- Split
 		.add({
-			targets: '.baseGroup',
+			targets: '#heroSvg .baseGroup',
 			translateX: -5,
 			easing: 'easeOutQuint',
-			duration: 2000,
-			offset: '-=2000'
+			duration: 1500,
+			offset: '-=1500'
 		})
 		.add({
-			targets: '.campGroup',
+			targets: '#heroSvg .campGroup',
 			translateX: 5,
 			easing: 'easeOutQuint',
-			duration: 2000,
-			offset: '-=2000'
+			duration: 1500,
+			offset: '-=1500',
+			complete: () => {
+				changeMargin();
+			}
 		})
-
-		//- Side transition
 		.add({
 			targets: '#heroSvg',
-			easing: 'easeOutQuint',
-			duration: 2000,
-			offset: '-=2000'
+			scale: 1,
 		});
+
+	function changeMargin() {
+		document.getElementById('heroSvg').style.padding = '90vh 40vw 0 40vw';
+	}
 
 
 	/* End Basecamp text */

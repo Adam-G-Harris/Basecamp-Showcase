@@ -15,6 +15,7 @@ $red-darker: #2A1315;
 
 body {
 	background-color: black;
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
 	overflow: hidden;
 }
 
@@ -25,7 +26,6 @@ body {
 	#heroVideoAndAudioContainer {
 		width: inherit;
 		position: absolute;
-		z-index: -1;
 
 		video {
 			width: inherit;
@@ -42,8 +42,26 @@ body {
 		#heroSvg {
 			width: 100vw;
 			height: 100vh;
-			padding-left: 25vw;
-			padding-right: 25vw;
+			padding-left: 35vw;
+			padding-right: 35vw;
+			padding-top: 85vh;
+			transition: padding 3s;
+		}
+	}
+
+	#menu {
+		position: absolute;
+		display: flex;
+		justify-content: flex-end;
+		color: white;
+		width: inherit;
+		top: 0;
+		left: 0;
+
+		p {
+			font-weight: 100;
+			margin: 1.5vw 2.5vw;
+			letter-spacing: 2px;
 		}
 	}
 }
