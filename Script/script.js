@@ -5,7 +5,7 @@ window.onload = () => {
 
 
 	// Used for positioning
-	const spacing = 145;
+	const spacing = 150;
 	const sqrSize = spacing / 26;
 	const lPos = `${spacing * 2}%`;
 	const sPos = `${spacing}%`;
@@ -89,7 +89,7 @@ window.onload = () => {
 			duration: 1600,
 			offset: '-=1600',
 			complete: () => {
-				document.getElementById('heroSvg').style.padding = '91vh 38vw 0 38vw';
+				document.getElementById('heroSvg').style.padding = '89vh 38vw 0 38vw';
 			}
 		})
 		.add({
