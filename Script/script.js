@@ -17,9 +17,9 @@ window.onload = () => {
 		top: '0',
 		radius: sqrSize,
 		fill: 'white',
-		fillOpacity: 0.1,
+		fillOpacity: 0.05,
 		stroke: 'white',
-		strokeWidth: 0.5,
+		strokeWidth: 0.4,
 		isShowStart: true
 	};
 
@@ -73,23 +73,23 @@ window.onload = () => {
 			targets: '#heroSvg #gPoly polyline',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			easing: 'easeOutQuint',
-			duration: 1500
+			duration: 1600
 		})
 		.add({
 			targets: '#heroSvg .baseGroup',
 			translateX: -5,
 			easing: 'easeOutQuint',
-			duration: 1500,
-			offset: '-=1500'
+			duration: 1600,
+			offset: '-=1600'
 		})
 		.add({
 			targets: '#heroSvg .campGroup',
 			translateX: 5,
 			easing: 'easeOutQuint',
-			duration: 1500,
-			offset: '-=1500',
+			duration: 1600,
+			offset: '-=1600',
 			complete: () => {
-				changeMargin();
+				document.getElementById('heroSvg').style.padding = '91vh 38vw 0 38vw';
 			}
 		})
 		.add({
@@ -97,12 +97,22 @@ window.onload = () => {
 			scale: 1,
 		});
 
-	function changeMargin() {
-		document.getElementById('heroSvg').style.padding = '90vh 40vw 0 40vw';
-	}
-
 
 	/* End Basecamp text */
+
+
+	/* Start audio mute */
+
+
+	const muteToggle = document.getElementById('unmuted');
+	const muteAffected = document.getElementById('aud');
+
+	muteToggle.addEventListener('click', () => {
+		muteAffected.volume === 1 ? muteAffected.volume = 0 : muteAffected.volume = 1;
+	});
+
+
+	/* End audio mute */
 
 
 	/* End all */
