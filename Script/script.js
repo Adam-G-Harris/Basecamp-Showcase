@@ -104,12 +104,20 @@ window.onload = () => {
 	/* Start audio mute */
 
 
-	const muteToggle = document.getElementById('unmuted');
+	const muteToggle = document.getElementById('audioSvg');
 	const muteAffected = document.getElementById('aud');
+	const unmuted = document.getElementById('unmuted');
+	const muted = document.getElementById('muted');
 
-	muteToggle.addEventListener('click', () => {
+	muteToggle.addEventListener('click', changeVolume);
+
+	function changeVolume() {
+
+		muted.classList.toggle('dontShow');
+		unmuted.classList.toggle('dontShow');
+
 		muteAffected.volume === 1 ? muteAffected.volume = 0 : muteAffected.volume = 1;
-	});
+	}
 
 
 	/* End audio mute */

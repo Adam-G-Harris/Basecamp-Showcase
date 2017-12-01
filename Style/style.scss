@@ -56,6 +56,10 @@ body {
 			width: 44px;
 			height: 44px;
 			color: white;
+
+			.dontShow {
+				opacity: 0;
+			}
 		}
 	}
 

@@ -50,6 +50,10 @@ body {
   color: white;
 }
 
+#landing #svgWrapper #audioSvg .dontShow {
+  opacity: 0;
+}
+
 #landing #audio {
   position: absolute;
   width: 44px;
