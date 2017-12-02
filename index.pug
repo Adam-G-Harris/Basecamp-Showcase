@@ -8,18 +8,19 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		link(rel="stylesheet", href="Style/style.css")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.2/mo.min.js", defer)
+		script(src="https://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js", defer)
+		script(src="https://cdn.jsdelivr.net/mojs-curve-editor/latest/mojs-curve-editor.min.js", defer)
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js", defer)
 		script(src="Script/script.js")
 		title Basecamp
 
 	body
 
-		#landing
+		#loader
 
-			#heroVideoAndAudioContainer
+			#loadingAnimation
 
-				video(id='vid' src="Assets/Video/Basecamp_Esc_Video.mp4")
-				audio(id='aud' src="Assets/Audio/Basecamp_Esc_Audio.mp3")
+		#loadingPage
 
 			#svgWrapper
 
@@ -47,6 +48,15 @@ html(lang="en")
 
 						//- Center line in Basecamp
 						polyline(id='centerLine' points="185.5 0 185.5 61")
+
+		#mainPage
+
+			#heroVideoAndAudioContainer
+
+				video(id='vid' src="Assets/Video/Basecamp_Esc_Video.mp4")
+				audio(id='aud' src="Assets/Audio/Basecamp_Esc_Audio.mp3")
+
+			#svgWrapper
 
 				//- Audio displays
 				svg(id='audioSvg' viewBox="0 0 44 44")

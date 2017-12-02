@@ -19,9 +19,63 @@ body {
 	//overflow: hidden;
 }
 
-#landing {
+
+/*-------------------------- Loading animation --------------------------*/
+
+
+#loader {
 	width: 100vw;
 	height: 100vh;
+	position: absolute;
+	z-index: 2;
+	background-color: teal;
+
+	#loadingAnimation {
+		position: absolute;
+		z-index: 3;
+		width: 100px;
+		height: 100px;
+		top: calc(50vh - 50px);
+		left: calc(50vw - 50px);
+		background-color: purple;
+	}
+}
+
+
+/*-------------------------- Loading screen --------------------------*/
+
+
+#loadingPage {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: black;
+
+	#svgWrapper {
+		height: inherit;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		#heroSvg {
+			width: 100vw;
+			height: 100vh;
+			padding-left: 25vw;
+			padding-right: 25vw;
+		}
+	}
+}
+
+
+/*-------------------------- Main video page --------------------------*/
+
+
+#mainPage {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -2;
 
 	#heroVideoAndAudioContainer {
 		width: inherit;
@@ -39,15 +93,6 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
-		#heroSvg {
-			width: 100vw;
-			height: 100vh;
-			padding-left: 35vw;
-			padding-right: 35vw;
-			padding-top: 85vh;
-			transition: padding 3s;
-		}
 
 		#audioSvg {
 			position: absolute;
@@ -84,14 +129,8 @@ body {
 		top: 0;
 		left: 0;
 
-		.menuItem {
-			font-weight: 100;
-			letter-spacing: 2px;
-			margin: 1.5vw 2.5vw;
-
-			&:hover{
-				cursor: default;
-			}
+		&:hover{
+			cursor: default;
 		}
 	}
 }

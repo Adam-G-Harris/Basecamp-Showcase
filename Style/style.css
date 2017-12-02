@@ -9,22 +9,34 @@ body {
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
 }
 
-#landing {
+/*-------------------------- Loading animation --------------------------*/
+#loader {
   width: 100vw;
   height: 100vh;
-}
-
-#landing #heroVideoAndAudioContainer {
-  width: inherit;
   position: absolute;
+  z-index: 2;
+  background-color: teal;
 }
 
-#landing #heroVideoAndAudioContainer video {
-  width: inherit;
-  background-size: cover;
+#loader #loadingAnimation {
+  position: absolute;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 50px);
+  background-color: purple;
 }
 
-#landing #svgWrapper {
+/*-------------------------- Loading screen --------------------------*/
+#loadingPage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+}
+
+#loadingPage #svgWrapper {
   height: inherit;
   position: absolute;
   display: flex;
@@ -32,16 +44,40 @@ body {
   align-items: center;
 }
 
-#landing #svgWrapper #heroSvg {
+#loadingPage #svgWrapper #heroSvg {
   width: 100vw;
   height: 100vh;
-  padding-left: 35vw;
-  padding-right: 35vw;
-  padding-top: 85vh;
-  transition: padding 3s;
+  padding-left: 25vw;
+  padding-right: 25vw;
 }
 
-#landing #svgWrapper #audioSvg {
+/*-------------------------- Main video page --------------------------*/
+#mainPage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+}
+
+#mainPage #heroVideoAndAudioContainer {
+  width: inherit;
+  position: absolute;
+}
+
+#mainPage #heroVideoAndAudioContainer video {
+  width: inherit;
+  background-size: cover;
+}
+
+#mainPage #svgWrapper {
+  height: inherit;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainPage #svgWrapper #audioSvg {
   position: absolute;
   left: 10px;
   top: calc(100vh - 54px);
@@ -50,11 +86,11 @@ body {
   color: white;
 }
 
-#landing #svgWrapper #audioSvg .dontShow {
+#mainPage #svgWrapper #audioSvg .dontShow {
   display: none;
 }
 
-#landing #audio {
+#mainPage #audio {
   position: absolute;
   width: 44px;
   left: 10px;
@@ -66,7 +102,7 @@ body {
   color: white;
 }
 
-#landing #menu {
+#mainPage #menu {
   position: absolute;
   display: flex;
   justify-content: flex-end;
@@ -76,13 +112,7 @@ body {
   left: 0;
 }
 
-#landing #menu .menuItem {
-  font-weight: 100;
-  letter-spacing: 2px;
-  margin: 1.5vw 2.5vw;
-}
-
-#landing #menu .menuItem:hover {
+#mainPage #menu:hover {
   cursor: default;
 }
  
