@@ -60,7 +60,7 @@ window.onload = () => {
 	// Main animation timeline
 	basecampText
 
-		//- Initial draw
+		// Initial draw
 		.add({
 			targets: '#heroSvg .gSvg path',
 			strokeDashoffset: [anime.setDashoffset, 0],
@@ -105,13 +105,14 @@ window.onload = () => {
 
 
 	const muteToggle = document.getElementById('audioSvg');
-	const muteAffected = document.getElementById('aud');
-	const unmuted = document.getElementById('unmuted');
-	const muted = document.getElementById('muted');
 
 	muteToggle.addEventListener('click', changeVolume);
 
 	function changeVolume() {
+
+		const muteAffected = document.getElementById('aud');
+		const unmuted = document.getElementById('unmuted');
+		const muted = document.getElementById('muted');
 
 		muted.classList.toggle('dontShow');
 		unmuted.classList.toggle('dontShow');
@@ -121,6 +122,40 @@ window.onload = () => {
 
 
 	/* End audio mute */
+
+
+	/* Start entrance animations */
+
+
+	// Animation constructor
+	const TITLES = {
+		opacity: { 0: 1 },
+		duration: 4000,
+		y: { '-6vh': 0 }
+	};
+
+	const menuEntrance1 = new mojs.Html({
+		...TITLES,
+		el: '#menu1'
+	});
+
+	const menuEntrance2 = new mojs.Html({
+		...TITLES,
+		el: '#menu2'
+	});
+
+	const menuEntrance3 = new mojs.Html({
+		...TITLES,
+		el: '#menu3'
+	});
+
+	const menuEntrance4 = new mojs.Html({
+		...TITLES,
+		el: '#menu4'
+	});
+
+
+	/* End entrance animations */
 
 
 	/* End all */

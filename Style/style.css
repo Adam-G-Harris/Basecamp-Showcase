@@ -51,7 +51,7 @@ body {
 }
 
 #landing #svgWrapper #audioSvg .dontShow {
-  opacity: 0;
+  display: none;
 }
 
 #landing #audio {
@@ -76,17 +76,13 @@ body {
   left: 0;
 }
 
-#landing #menu #pageHome {
-  text-decoration: line-through;
-}
-
-#landing #menu p {
+#landing #menu .menuItem {
   font-weight: 100;
-  margin: 1.5vw 2.5vw;
   letter-spacing: 2px;
+  margin: 1.5vw 2.5vw;
 }
 
-#landing #menu p:hover {
+#landing #menu .menuItem:hover {
   cursor: default;
 }
  
