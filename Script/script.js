@@ -6,21 +6,16 @@ window.onload = () => {
 
 	; (function () {
 
-		const curveEditor = new MojsCurveEditor({ name: 'yOffset' });
-
-		const XcurveEditor = new MojsCurveEditor({ name: 'xScale' });
-
-		const rotateEditor = new MojsCurveEditor({ name: 'rotate' });
-
-		const loadingAnimation = new mojs.Html({
-			el: '#loadingAnimation',
-			y: { [-300]: -300, curve: curveEditor.getEasing() },
-			scaleX: { [1]: 1, curve: XcurveEditor.getEasing() },
-			angleZ: { [0]: 360, curve: rotateEditor.getEasing() },
-			duration: 1000
+		let loader = anime({
+			targets: '#loader input',
+			round: 1,
+			easing: 'linear',
+			value: 100,
+			duration: 5000,
+			complete: () => {
+				basecampTextAnimation();
+			}
 		});
-
-		new MojsPlayer({ add: loadingAnimation });
 
 	})()
 
@@ -32,6 +27,8 @@ window.onload = () => {
 
 
 	function basecampTextAnimation() {
+
+		document.getElementById('loader').style.opacity = 0;
 
 		const basecampText = anime.timeline();
 
@@ -74,7 +71,6 @@ window.onload = () => {
 					mainPage();
 				}
 			});
-
 	}
 
 
@@ -86,8 +82,32 @@ window.onload = () => {
 
 	function mainPage() {
 
+		document.getElementById('loadingPage').style.opacity = 0;
+		document.getElementById('vid').play();
+		document.getElementById('aud').play();
 
-		/* Start menu icon */
+
+		/* Start audio mute */
+
+
+		const muteToggle = document.getElementById('audioSvg');
+
+		muteToggle.addEventListener('click', changeVolume);
+
+		function changeVolume() {
+
+			const muteAffected = document.getElementById('aud');
+			const unmuted = document.getElementById('unmuted');
+			const muted = document.getElementById('muted');
+
+			muted.classList.toggle('dontShow');
+			unmuted.classList.toggle('dontShow');
+
+			muteAffected.volume === 1 ? muteAffected.volume = 0 : muteAffected.volume = 1;
+		}
+
+
+		/* End audio mute */
 
 
 		// Used for positioning
@@ -133,32 +153,6 @@ window.onload = () => {
 			x: sPos,
 			y: lPos
 		});
-
-
-		/* End menu icon */
-
-
-		/* Start audio mute */
-
-
-		const muteToggle = document.getElementById('audioSvg');
-
-		muteToggle.addEventListener('click', changeVolume);
-
-		function changeVolume() {
-
-			const muteAffected = document.getElementById('aud');
-			const unmuted = document.getElementById('unmuted');
-			const muted = document.getElementById('muted');
-
-			muted.classList.toggle('dontShow');
-			unmuted.classList.toggle('dontShow');
-
-			muteAffected.volume === 1 ? muteAffected.volume = 0 : muteAffected.volume = 1;
-		}
-
-
-		/* End audio mute */
 
 
 		/* Start entrance animations */
@@ -216,6 +210,15 @@ window.onload = () => {
 			easing: 'quart.out'
 		});
 
+		const basecampEntrance = new mojs.Html({
+			el: '#rightBaseText',
+			y: { '3vh': 0 },
+			opacity: { 0: 1 },
+			delay: 1500,
+			duration: 4000,
+			easing: 'quart.out'
+		});
+
 		// Entrance animation timeline
 		const menuAnimation = new mojs.Timeline();
 
@@ -224,7 +227,8 @@ window.onload = () => {
 			menuEntrance3,
 			menuEntrance4,
 			audioEntrance,
-			audioLabelEntrance).play();
+			audioLabelEntrance,
+			basecampEntrance).play();
 
 
 		/* End entrance animations */

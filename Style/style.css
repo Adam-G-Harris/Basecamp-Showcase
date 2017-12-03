@@ -9,23 +9,26 @@ body {
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
 }
 
-/*-------------------------- Loading animation --------------------------*/
+/*-------------------------- Loading percentage --------------------------*/
 #loader {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
-  background-color: teal;
+  transition: opacity 3s;
 }
 
-#loader #loadingAnimation {
-  position: absolute;
-  z-index: 3;
-  width: 100px;
-  height: 100px;
-  top: calc(50vh - 50px);
-  left: calc(50vw - 50px);
-  background-color: purple;
+#loader input {
+  background-color: black;
+  color: white;
+  text-align: center;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 100;
 }
 
 /*-------------------------- Loading screen --------------------------*/
@@ -34,6 +37,7 @@ body {
   height: 100vh;
   position: absolute;
   background-color: black;
+  transition: opacity 3s;
 }
 
 #loadingPage #svgWrapper {
@@ -47,8 +51,8 @@ body {
 #loadingPage #svgWrapper #heroSvg {
   width: 100vw;
   height: 100vh;
-  padding-left: 25vw;
-  padding-right: 25vw;
+  padding-left: 30vw;
+  padding-right: 30vw;
 }
 
 /*-------------------------- Main video page --------------------------*/
@@ -114,6 +118,18 @@ body {
 
 #mainPage #menu:hover {
   cursor: default;
+}
+
+#mainPage #rightBaseText {
+  position: absolute;
+  width: auto;
+  right: 1rem;
+  bottom: .5rem;
+  font-weight: 100;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
 }
  
 
