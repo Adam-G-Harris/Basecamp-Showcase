@@ -6,6 +6,10 @@ window.onload = () => {
 
 	; (function () {
 
+		const loaderLine = document.getElementById('loaderLine');
+		loaderLine.style.width = '29vw';
+		loaderLine.style.backgroundColor = '#2A1315';
+
 		let loader = anime({
 			targets: '#loader input',
 			round: 1,
@@ -28,21 +32,35 @@ window.onload = () => {
 
 	function basecampTextAnimation() {
 
-		document.getElementById('loader').style.opacity = 0;
+		setTimeout(() => {
+			loader.style.display = 'none';
+		}, 3000);
 
-		const basecampText = anime.timeline();
+		const loader = document.getElementById('loader');
+		loader.style.transform = 'translateY(20vh)';
+		loader.style.opacity = 0;
 
 		// Main animation timeline
+		const basecampText = anime.timeline();
+
 		basecampText
 
 			// Initial draw
+			.add({
+				targets: '#heroSvg',
+				translateY: ['-20vh', 0],
+				easing: 'linear',
+				duration: 5000,
+				offset: 0
+			})
 			.add({
 				targets: '#heroSvg .gSvg path',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
 				strokeWidth: 0.4,
 				duration: 1500,
-				delay: (el, i) => { return i * 200 }
+				delay: (el, i) => { return i * 200 },
+				offset: 0
 			})
 			.add({
 				targets: '#heroSvg #gPoly polyline',
@@ -82,6 +100,10 @@ window.onload = () => {
 
 	function mainPage() {
 
+		setTimeout(() => {
+			document.getElementById('loadingPage').style.display = 'none';
+		}, 3000);
+
 		document.getElementById('loadingPage').style.opacity = 0;
 		document.getElementById('vid').play();
 		document.getElementById('aud').play();
@@ -95,6 +117,8 @@ window.onload = () => {
 		muteToggle.addEventListener('click', changeVolume);
 
 		function changeVolume() {
+
+			console.log('yup');
 
 			const muteAffected = document.getElementById('aud');
 			const unmuted = document.getElementById('unmuted');
@@ -164,31 +188,29 @@ window.onload = () => {
 			duration: 4000,
 			easing: 'quint.out',
 			y: { '-8vh': 0 },
-			fontWeight: '100',
-			letterSpacing: '2px',
-			margin: '1.5vw 2.5vw'
+			letterSpacing: '2px'
 		};
 
 		const menuEntrance1 = new mojs.Html({
 			...TITLE,
-			el: '#menu1'
+			el: '#svg1'
 		});
 
 		const menuEntrance2 = new mojs.Html({
 			...TITLE,
-			el: '#menu2',
+			el: '#svg2',
 			delay: 300
 		});
 
 		const menuEntrance3 = new mojs.Html({
 			...TITLE,
-			el: '#menu3',
+			el: '#svg3',
 			delay: 600
 		});
 
 		const menuEntrance4 = new mojs.Html({
 			...TITLE,
-			el: '#menu4',
+			el: '#svg4',
 			delay: 900
 		});
 

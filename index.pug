@@ -21,6 +21,10 @@ html(lang="en")
 
 			input(value='0')
 
+			#loaderLine
+			#loaderLineLeft
+			#loaderLineRight
+
 		#loadingPage
 
 			#svgWrapper
@@ -87,10 +91,29 @@ html(lang="en")
 
 			#menu
 
-				p(id='menu1') Home
-				p(id='menu2') Music
-				p(id='menu3') About
-				p(id='menu4') Contact
+				svg(width='8rem' height='3rem')
+
+					rect(class='svgShape' width='8rem' height='3rem')
+
+						p(id='svg1') Home
+
+				svg(width='8rem' height='3rem')
+
+					rect(class='svgShape' width='8rem' height='3rem')
+
+						p(id='svg2') Music
+
+				svg(width='8rem' height='3rem')
+
+					rect(class='svgShape' width='8rem' height='3rem')
+
+						p(id='svg3') About
+
+				svg(width='8rem' height='3rem')
+
+					rect(class='svgShape' width='8rem' height='3rem')
+
+						p(id='svg4') Contact
 
 			#rightBaseText
 

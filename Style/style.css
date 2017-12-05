@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #2A1315;
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
 }
 
@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  transition: opacity 3s;
+  transition: opacity 3s, transform 5s;
 }
 
 #loader input {
@@ -29,6 +29,37 @@ body {
   border: none;
   font-size: 2.5rem;
   font-weight: 100;
+}
+
+#loader #loaderLine {
+  width: 0vw;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 55vh;
+  transition: width 5s linear, background-color 5s linear;
+}
+
+#loader #loaderLineLeft {
+  background-color: white;
+  width: 2vh;
+  height: 1px;
+  right: 35vw;
+  position: absolute;
+  top: 56vh;
+  transform: rotate(90deg);
+  transform-origin: 100% 0%;
+}
+
+#loader #loaderLineRight {
+  background-color: white;
+  width: 2vh;
+  left: 35vw;
+  height: 1px;
+  position: absolute;
+  top: 54vh;
+  transform: rotate(90deg);
+  transform-origin: 0% 0%;
 }
 
 /*-------------------------- Loading screen --------------------------*/
@@ -84,7 +115,7 @@ body {
 #mainPage #svgWrapper #audioSvg {
   position: absolute;
   left: 10px;
-  top: calc(100vh - 54px);
+  top: calc(100vh - 70px);
   width: 44px;
   height: 44px;
   color: white;
@@ -98,7 +129,7 @@ body {
   position: absolute;
   width: 44px;
   left: 10px;
-  bottom: 64px;
+  bottom: 80px;
   font-weight: 100;
   letter-spacing: 2px;
   text-align: center;
@@ -109,6 +140,7 @@ body {
 #mainPage #menu {
   position: absolute;
   display: flex;
+  font-weight: 100;
   justify-content: flex-end;
   color: white;
   width: inherit;
@@ -120,11 +152,58 @@ body {
   cursor: default;
 }
 
+#mainPage #menu p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  height: 3rem;
+  width: 8rem;
+}
+
+#mainPage #menu #svg1 {
+  right: 24rem;
+}
+
+#mainPage #menu #svg2 {
+  right: 16rem;
+}
+
+#mainPage #menu #svg3 {
+  right: 8rem;
+}
+
+#mainPage #menu #svg4 {
+  right: 0;
+}
+
+#mainPage #menu .svgShape {
+  fill: none;
+  stroke: white;
+  stroke-width: .5px;
+  stroke-opacity: 0.3;
+  stroke-dasharray: 6rem 12rem;
+  stroke-dashoffset: -12rem;
+  transition: stroke-width 0.5s, stroke-dasharray 0.5s, stroke-dashoffset 0.5s;
+}
+
+#mainPage #menu svg {
+  z-index: 12;
+}
+
+#mainPage #menu svg:hover .svgShape {
+  stroke-width: 1px;
+  stroke-opacity: 1;
+  stroke-dasharray: 1rem 10rem;
+  stroke-dashoffset: -20rem;
+}
+
 #mainPage #rightBaseText {
   position: absolute;
   width: auto;
-  right: 1rem;
-  bottom: .5rem;
+  right: 10px;
+  bottom: 21px;
   font-weight: 100;
   letter-spacing: 4px;
   text-align: center;
