@@ -103,17 +103,12 @@ window.onload = () => {
 
 	function mainPage() {
 
-		setTimeout(() => {
-			document.getElementById('loadingPage').style.display = 'none';
-		}, 3000);
-
-		document.getElementById('loadingPage').style.opacity = 0;
-		document.getElementById('vid').play();
-		document.getElementById('aud').play();
-
 
 		/* Start audio mute */
 
+
+		document.getElementById('vid').play();
+		document.getElementById('aud').play();
 
 		const muteToggle = document.getElementById('audioSvg');
 
@@ -148,7 +143,7 @@ window.onload = () => {
 			top: '0',
 			radius: sqrSize,
 			fill: 'white',
-			fillOpacity: 0.05,
+			fillOpacity: .1,
 			stroke: 'white',
 			strokeWidth: 0.4,
 			isShowStart: true
@@ -186,7 +181,7 @@ window.onload = () => {
 		// Entrance parts constructor
 		const TITLE = {
 			opacity: { 0: 1 },
-			duration: 4000,
+			duration: 8000,
 			easing: 'quint.out',
 			y: { '-8vh': 0 },
 			letterSpacing: '2px'
@@ -200,19 +195,19 @@ window.onload = () => {
 		const menuEntrance2 = new mojs.Html({
 			...TITLE,
 			el: '#svg2',
-			delay: 300
+			delay: 500
 		});
 
 		const menuEntrance3 = new mojs.Html({
 			...TITLE,
 			el: '#svg3',
-			delay: 600
+			delay: 1000
 		});
 
 		const menuEntrance4 = new mojs.Html({
 			...TITLE,
 			el: '#svg4',
-			delay: 900
+			delay: 1500
 		});
 
 		const audioEntrance = new mojs.Html({
@@ -238,7 +233,7 @@ window.onload = () => {
 			y: { '3vh': 0 },
 			opacity: { 0: 1 },
 			delay: 1500,
-			duration: 4000,
+			duration: 8000,
 			easing: 'quart.out'
 		});
 

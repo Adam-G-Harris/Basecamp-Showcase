@@ -78,33 +78,6 @@ body {
 }
 
 
-/*-------------------------- Loading screen --------------------------*/
-
-
-#loadingPage {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	background-color: black;
-	transition: opacity 3s;
-
-	#svgWrapper {
-		height: inherit;
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		#heroSvg {
-			width: 100vw;
-			height: 100vh;
-			padding-left: 30vw;
-			padding-right: 30vw;
-		}
-	}
-}
-
-
 /*-------------------------- Main video page --------------------------*/
 
 
@@ -131,6 +104,21 @@ body {
 		justify-content: center;
 		align-items: center;
 
+		#heroSvg {
+			width: 100vw;
+			height: 100vh;
+			padding-left: 30vw;
+			padding-right: 30vw;
+		}
+	}
+
+	#svgWrapper {
+		height: inherit;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		#audioSvg {
 			position: absolute;
 			left: 10px;
@@ -141,6 +129,10 @@ body {
 
 			.dontShow {
 				display: none;
+			}
+
+			&:hover {
+				cursor: pointer;
 			}
 		}
 	}
