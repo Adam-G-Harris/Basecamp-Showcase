@@ -19,11 +19,11 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  transition: opacity 3s, transform 5s;
+  transition: opacity 3s linear, transform 3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 #loader input {
-  background-color: black;
+  background-color: transparent;
   color: white;
   text-align: center;
   border: none;

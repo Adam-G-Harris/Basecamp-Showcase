@@ -7,6 +7,7 @@ window.onload = () => {
 	; (function () {
 
 		const loaderLine = document.getElementById('loaderLine');
+
 		loaderLine.style.width = '29vw';
 		loaderLine.style.backgroundColor = '#2A1315';
 
@@ -32,12 +33,14 @@ window.onload = () => {
 
 	function basecampTextAnimation() {
 
+		// Loading animation transition
+		const loader = document.getElementById('loader');
+
 		setTimeout(() => {
 			loader.style.display = 'none';
 		}, 3000);
 
-		const loader = document.getElementById('loader');
-		loader.style.transform = 'translateY(20vh)';
+		loader.style.transform = 'translateY(30vh)';
 		loader.style.opacity = 0;
 
 		// Main animation timeline
@@ -49,8 +52,8 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg',
 				translateY: ['-20vh', 0],
-				easing: 'linear',
-				duration: 5000,
+				easing: [0.445, 0.05, 0.55, 0.95],
+				duration: 3000,
 				offset: 0
 			})
 			.add({
@@ -66,21 +69,21 @@ window.onload = () => {
 				targets: '#heroSvg #gPoly polyline',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeOutQuint',
-				duration: 1600
+				duration: 2000
 			})
 			.add({
 				targets: '#heroSvg .baseGroup',
 				translateX: -5,
 				easing: 'easeOutQuint',
-				duration: 1600,
-				offset: '-=1600'
+				duration: 2000,
+				offset: '-=2000'
 			})
 			.add({
 				targets: '#heroSvg .campGroup',
 				translateX: 5,
 				easing: 'easeOutQuint',
-				duration: 1600,
-				offset: '-=1600'
+				duration: 2000,
+				offset: '-=2000'
 			})
 			.add({
 				targets: '#heroSvg',
@@ -117,8 +120,6 @@ window.onload = () => {
 		muteToggle.addEventListener('click', changeVolume);
 
 		function changeVolume() {
-
-			console.log('yup');
 
 			const muteAffected = document.getElementById('aud');
 			const unmuted = document.getElementById('unmuted');
