@@ -43,6 +43,9 @@ window.onload = () => {
 		loader.style.transform = 'translateY(30vh)';
 		loader.style.opacity = 0;
 
+		// Calling other elements to enter
+		mainPage();
+
 		// Main animation timeline
 		const basecampText = anime.timeline();
 
@@ -50,19 +53,12 @@ window.onload = () => {
 
 			// Initial draw
 			.add({
-				targets: '#heroSvg',
-				translateY: ['-20vh', 0],
-				easing: [0.445, 0.05, 0.55, 0.95],
-				duration: 3000,
-				offset: 0
-			})
-			.add({
 				targets: '#heroSvg .gSvg path',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
-				strokeWidth: 0.4,
+				strokeWidth: 0.8,
 				duration: 1500,
-				delay: (el, i) => { return i * 200 },
+				delay: (el, i) => { return i * 200 + 2000 },
 				offset: 0
 			})
 			.add({
@@ -87,10 +83,7 @@ window.onload = () => {
 			})
 			.add({
 				targets: '#heroSvg',
-				scale: 1,
-				complete: () => {
-					mainPage();
-				}
+				scale: 1
 			});
 	}
 
@@ -214,7 +207,7 @@ window.onload = () => {
 			el: '#audio',
 			x: { '-3vw': 0 },
 			opacity: { 0: 1 },
-			delay: 1500,
+			delay: 2500,
 			duration: 4000,
 			easing: 'quart.out'
 		});
@@ -223,17 +216,8 @@ window.onload = () => {
 			el: '#audioSvg',
 			y: { '3vh': 0 },
 			opacity: { 0: 1 },
-			delay: 1500,
+			delay: 2500,
 			duration: 4000,
-			easing: 'quart.out'
-		});
-
-		const basecampEntrance = new mojs.Html({
-			el: '#rightBaseText',
-			y: { '3vh': 0 },
-			opacity: { 0: 1 },
-			delay: 1500,
-			duration: 8000,
 			easing: 'quart.out'
 		});
 
@@ -245,8 +229,7 @@ window.onload = () => {
 			menuEntrance3,
 			menuEntrance4,
 			audioEntrance,
-			audioLabelEntrance,
-			basecampEntrance).play();
+			audioLabelEntrance).play();
 
 
 		/* End entrance animations */

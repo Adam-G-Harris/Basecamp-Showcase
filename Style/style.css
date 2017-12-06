@@ -80,19 +80,15 @@ body {
   background-size: cover;
 }
 
-#mainPage #svgWrapper {
-  height: inherit;
+#mainPage #basecampSvgContainer {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 15px;
+  bottom: 20px;
 }
 
-#mainPage #svgWrapper #heroSvg {
-  width: 100vw;
-  height: 100vh;
-  padding-left: 30vw;
-  padding-right: 30vw;
+#mainPage #basecampSvgContainer #heroSvg {
+  width: auto;
+  height: 2rem;
 }
 
 #mainPage #svgWrapper {
@@ -192,18 +188,6 @@ body {
   stroke-opacity: 1;
   stroke-dasharray: 1rem 10rem;
   stroke-dashoffset: -20rem;
-}
-
-#mainPage #rightBaseText {
-  position: absolute;
-  width: auto;
-  right: 10px;
-  bottom: 21px;
-  font-weight: 100;
-  letter-spacing: 4px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: white;
 }
  
 

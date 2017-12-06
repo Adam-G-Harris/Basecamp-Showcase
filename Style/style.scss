@@ -97,18 +97,14 @@ body {
 		}
 	}
 
-	#svgWrapper {
-		height: inherit;
+	#basecampSvgContainer {
 		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		right: 15px;
+		bottom: 20px;
 
 		#heroSvg {
-			width: 100vw;
-			height: 100vh;
-			padding-left: 30vw;
-			padding-right: 30vw;
+			width: auto;
+			height: 2rem;
 		}
 	}
 
@@ -214,17 +210,5 @@ body {
 				}
 			}
 		}
-	}
-
-	#rightBaseText {
-		position: absolute;
-		width: auto;
-		right: 10px;
-		bottom: 21px;
-		font-weight: 100;
-		letter-spacing: 4px;
-		text-align: center;
-		font-size: 1.5rem;
-		color: white;
 	}
 }
