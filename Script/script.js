@@ -11,7 +11,7 @@ window.onload = () => {
 		loaderLine.style.width = '29vw';
 
 		let loader = anime({
-			targets: '#loader #loaderContainer input',
+			targets: '#loader input',
 			round: 1,
 			easing: 'linear',
 			value: 100,
@@ -34,13 +34,11 @@ window.onload = () => {
 
 		// Loading animation transition
 		const loader = document.getElementById('loader');
-		const loaderContainer = document.getElementById('loaderContainer');
 
 		setTimeout(() => {
 			loader.style.display = 'none';
 		}, 2500);
 
-		loaderContainer.style.transform = 'translateY(30vh)';
 		loader.style.opacity = 0;
 
 		// Calling other elements to enter
@@ -170,37 +168,13 @@ window.onload = () => {
 
 		/* Start entrance animations */
 
-
-		// Entrance parts constructor
-		const TITLE = {
+		const menuEntrance = new mojs.Html({
+			el: '#menu',
+			x: { '1vw': 0 },
 			opacity: { 0: 1 },
+			delay: 2500,
 			duration: 2000,
-			easing: 'quint.out',
-			y: { '-2vh': 0 },
-			letterSpacing: '2px'
-		};
-
-		const menuEntrance1 = new mojs.Html({
-			...TITLE,
-			el: '#svg1'
-		});
-
-		const menuEntrance2 = new mojs.Html({
-			...TITLE,
-			el: '#svg2',
-			delay: 500
-		});
-
-		const menuEntrance3 = new mojs.Html({
-			...TITLE,
-			el: '#svg3',
-			delay: 1000
-		});
-
-		const menuEntrance4 = new mojs.Html({
-			...TITLE,
-			el: '#svg4',
-			delay: 1500
+			easing: 'quart.out'
 		});
 
 		const audioEntrance = new mojs.Html({
@@ -233,13 +207,12 @@ window.onload = () => {
 		// Entrance animation timeline
 		const menuAnimation = new mojs.Timeline();
 
-		menuAnimation.add(menuEntrance1,
-			menuEntrance2,
-			menuEntrance3,
-			menuEntrance4,
+		menuAnimation.add(
+			menuEntrance,
 			audioEntrance,
 			audioLabelEntrance,
-			logoEntrance).play();
+			logoEntrance
+		).play();
 
 
 		/* End entrance animations */

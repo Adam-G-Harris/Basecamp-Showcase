@@ -17,19 +17,12 @@ body {
   z-index: 10;
   background-color: black;
   transition: opacity 1s linear;
-}
-
-#loader #loaderContainer {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 1s cubic-bezier(0.6, 0.1, 0.6, 1);
 }
 
-#loader #loaderContainer input {
+#loader input {
   background-color: transparent;
   color: white;
   text-align: center;
@@ -38,7 +31,7 @@ body {
   font-weight: 100;
 }
 
-#loader #loaderContainer #loaderLine {
+#loader #loaderLine {
   width: 0vw;
   height: 1px;
   background-color: white;
@@ -47,7 +40,7 @@ body {
   transition: width 2.5s linear;
 }
 
-#loader #loaderContainer #loaderLineLeft {
+#loader #loaderLineLeft {
   background-color: white;
   width: 2vh;
   height: 1px;
@@ -58,7 +51,7 @@ body {
   transform-origin: 100% 0%;
 }
 
-#loader #loaderContainer #loaderLineRight {
+#loader #loaderLineRight {
   background-color: white;
   width: 2vh;
   left: 35vw;
@@ -135,12 +128,13 @@ body {
 #mainPage #menu {
   position: absolute;
   display: flex;
+  flex-direction: column;
   font-weight: 100;
-  justify-content: flex-end;
   color: white;
-  width: inherit;
-  top: 0;
-  left: 0;
+  width: auto;
+  height: auto;
+  top: -1vh;
+  right: 2vw;
 }
 
 #mainPage #menu:hover {
@@ -148,49 +142,20 @@ body {
 }
 
 #mainPage #menu p {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 8rem;
+  margin: 3vh 0;
+  padding: 15px;
+  width: auto;
+  height: auto;
+  letter-spacing: 2px;
+  border-width: 0 0 .5px 0;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-style: solid;
+  transition: border-color .5s, box-shadow .5s;
 }
 
-#mainPage #menu #svg1 {
-  right: 24rem;
-}
-
-#mainPage #menu #svg2 {
-  right: 16rem;
-}
-
-#mainPage #menu #svg3 {
-  right: 8rem;
-}
-
-#mainPage #menu #svg4 {
-  right: 0;
-}
-
-#mainPage #menu .svgShape {
-  fill: none;
-  stroke: white;
-  stroke-width: .5px;
-  stroke-opacity: 0.3;
-  stroke-dasharray: 6rem 12rem;
-  stroke-dashoffset: -12rem;
-  transition: stroke-width 0.5s, stroke-dasharray 0.5s, stroke-dashoffset 0.5s;
-}
-
-#mainPage #menu svg {
-  z-index: 1;
-}
-
-#mainPage #menu svg:hover .svgShape {
-  stroke-width: 1px;
-  stroke-opacity: 1;
-  stroke-dasharray: 1rem 10rem;
-  stroke-dashoffset: -20rem;
+#mainPage #menu p:hover {
+  border-color: white;
+  box-shadow: inset 0 -2px 10px white;
 }
 
 /*-------------------------- Page 1 Section 2 --------------------------*/
