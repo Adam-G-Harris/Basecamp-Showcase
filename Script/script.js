@@ -9,10 +9,9 @@ window.onload = () => {
 		const loaderLine = document.getElementById('loaderLine');
 
 		loaderLine.style.width = '29vw';
-		loaderLine.style.backgroundColor = '#5C7A92';
 
 		let loader = anime({
-			targets: '#loader input',
+			targets: '#loader #loaderContainer input',
 			round: 1,
 			easing: 'linear',
 			value: 100,
@@ -35,12 +34,13 @@ window.onload = () => {
 
 		// Loading animation transition
 		const loader = document.getElementById('loader');
+		const loaderContainer = document.getElementById('loaderContainer');
 
 		setTimeout(() => {
 			loader.style.display = 'none';
 		}, 2500);
 
-		loader.style.transform = 'translateY(30vh)';
+		loaderContainer.style.transform = 'translateY(30vh)';
 		loader.style.opacity = 0;
 
 		// Calling other elements to enter
@@ -174,9 +174,9 @@ window.onload = () => {
 		// Entrance parts constructor
 		const TITLE = {
 			opacity: { 0: 1 },
-			duration: 8000,
+			duration: 2000,
 			easing: 'quint.out',
-			y: { '-8vh': 0 },
+			y: { '-2vh': 0 },
 			letterSpacing: '2px'
 		};
 
@@ -208,7 +208,7 @@ window.onload = () => {
 			x: { '-3vw': 0 },
 			opacity: { 0: 1 },
 			delay: 2500,
-			duration: 4000,
+			duration: 2000,
 			easing: 'quart.out'
 		});
 
@@ -217,7 +217,7 @@ window.onload = () => {
 			y: { '3vh': 0 },
 			opacity: { 0: 1 },
 			delay: 2500,
-			duration: 4000,
+			duration: 2000,
 			easing: 'quart.out'
 		});
 
@@ -226,7 +226,7 @@ window.onload = () => {
 			y: { '3vh': 0 },
 			opacity: { 0: 1 },
 			delay: 2500,
-			duration: 4000,
+			duration: 2000,
 			easing: 'quart.out'
 		});
 

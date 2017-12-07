@@ -9,8 +9,8 @@ html(lang="en")
 		link(rel="stylesheet", href="Style/style.css")
 		link(rel="shortcut icon", href="Assets/Images/Basecamp_Favicon.ico", type="image/x-icon")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.2/mo.min.js", defer)
-		script(src="https://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js", defer)
-		script(src="https://cdn.jsdelivr.net/mojs-curve-editor/latest/mojs-curve-editor.min.js", defer)
+		//-script(src="https://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js", defer)
+		//-script(src="https://cdn.jsdelivr.net/mojs-curve-editor/latest/mojs-curve-editor.min.js", defer)
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js", defer)
 		script(src="Script/script.js")
 		title Basecamp
@@ -19,11 +19,13 @@ html(lang="en")
 
 		#loader
 
-			input(value='0')
+			#loaderContainer
 
-			#loaderLine
-			#loaderLineLeft
-			#loaderLineRight
+				input(value='0')
+
+				#loaderLine
+				#loaderLineLeft
+				#loaderLineRight
 
 		#svgWrapper
 
@@ -49,7 +51,7 @@ html(lang="en")
 
 			#heroVideoAndAudioContainer
 
-				video(id='vid' src="Assets/Video/Basecamp_Esc_Video.mp4")
+				video(id='vid' src="Assets/Video/Basecamp_Esc_Video copy - converted with Clipchamp.mp4")
 				audio(id='aud' src="Assets/Audio/Basecamp_Esc_Audio.mp3")
 
 			#logoSvgContainer

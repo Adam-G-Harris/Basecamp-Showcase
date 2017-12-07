@@ -14,15 +14,22 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  z-index: 10;
   background-color: black;
+  transition: opacity 1s linear;
+}
+
+#loader #loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
-  transition: opacity 2.5s linear, transform 2.5s cubic-bezier(0.6, 0.1, 0.6, 1);
+  transition: transform 1s cubic-bezier(0.6, 0.1, 0.6, 1);
 }
 
-#loader input {
+#loader #loaderContainer input {
   background-color: transparent;
   color: white;
   text-align: center;
@@ -31,16 +38,16 @@ body {
   font-weight: 100;
 }
 
-#loader #loaderLine {
+#loader #loaderContainer #loaderLine {
   width: 0vw;
   height: 1px;
   background-color: white;
   position: absolute;
   top: 55vh;
-  transition: width 2.5s linear, background-color 2.5s linear;
+  transition: width 2.5s linear;
 }
 
-#loader #loaderLineLeft {
+#loader #loaderContainer #loaderLineLeft {
   background-color: white;
   width: 2vh;
   height: 1px;
@@ -51,7 +58,7 @@ body {
   transform-origin: 100% 0%;
 }
 
-#loader #loaderLineRight {
+#loader #loaderContainer #loaderLineRight {
   background-color: white;
   width: 2vh;
   left: 35vw;
