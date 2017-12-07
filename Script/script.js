@@ -44,7 +44,7 @@ window.onload = () => {
 		// Calling other elements to enter
 		mainPage();
 
-		/*// Main animation timeline
+		// Main animation timeline
 		const basecampText = anime.timeline();
 
 		basecampText
@@ -54,7 +54,7 @@ window.onload = () => {
 				targets: '#heroSvg .gSvg path',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
-				strokeWidth: .8,
+				strokeWidth: .6,
 				duration: 1500,
 				delay: (el, i) => { return i * 200 + 2000 },
 				offset: 0
@@ -82,7 +82,7 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg',
 				scale: 1
-			});*/
+			});
 	}
 
 
@@ -98,8 +98,8 @@ window.onload = () => {
 		/* Start audio mute */
 
 
-		//document.getElementById('vid').play();
-		//document.getElementById('aud').play();
+		document.getElementById('vid').play();
+		document.getElementById('aud').play();
 
 		const muteToggle = document.getElementById('audioSvg');
 
