@@ -15,9 +15,8 @@ $transition-timing: .5s;
 }
 
 body {
-	background-color: $red-darker;
+	background-color: $blue-dark;
 	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
-	//overflow: hidden;
 }
 
 
@@ -32,9 +31,9 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 2;
-	transition: opacity 3s linear,
-				transform 3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	z-index: 10;
+	transition: opacity 2.5s linear,
+				transform 2.5s cubic-bezier(0.6, 0.1, 0.6, 1);
 
 	input {
 		background-color: transparent;
@@ -51,7 +50,7 @@ body {
 		background-color: white;
 		position: absolute;
 		top: 55vh;
-		transition: width 5s linear, background-color 5s linear;
+		transition: width 2.5s linear, background-color 2.5s linear;
 	}
 
 	#loaderLineLeft {
@@ -81,15 +80,45 @@ body {
 /*-------------------------- Main video page --------------------------*/
 
 
+#svgWrapper {
+	height: inherit;
+	z-index: 9;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	#audioSvg {
+		position: absolute;
+		left: 10px;
+		top: calc(100vh - 70px);
+		width: 44px;
+		height: 44px;
+		color: white;
+
+		.dontShow {
+			display: none;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+
+/*-------------------------- Page 1 Section 1 --------------------------*/
+
+
 #mainPage {
 	width: 100vw;
 	height: 100vh;
-	position: absolute;
-	z-index: -2;
 
 	#heroVideoAndAudioContainer {
 		width: inherit;
 		position: absolute;
+		background-color: $blue-light;
+		opacity: 0.7;
 
 		video {
 			width: inherit;
@@ -97,40 +126,10 @@ body {
 		}
 	}
 
-	#basecampSvgContainer {
+	#logoSvgContainer {
 		position: absolute;
-		right: 15px;
 		bottom: 20px;
-
-		#heroSvg {
-			width: auto;
-			height: 2rem;
-		}
-	}
-
-	#svgWrapper {
-		height: inherit;
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		#audioSvg {
-			position: absolute;
-			left: 10px;
-			top: calc(100vh - 70px);
-			width: 44px;
-			height: 44px;
-			color: white;
-
-			.dontShow {
-				display: none;
-			}
-
-			&:hover {
-				cursor: pointer;
-			}
-		}
+		right: 10px;
 	}
 
 	#audio {
@@ -164,7 +163,6 @@ body {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			z-index: 11;
 			height: 3rem;
 			width: 8rem;
 		}
@@ -198,7 +196,7 @@ body {
 		}
 
 		svg {
-			z-index: 12;
+			z-index: 1;
 
 			&:hover {
 
@@ -211,4 +209,15 @@ body {
 			}
 		}
 	}
+}
+
+
+/*-------------------------- Page 1 Section 2 --------------------------*/
+
+
+#mainPage2 {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: $red-darker;
 }

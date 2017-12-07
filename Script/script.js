@@ -9,14 +9,14 @@ window.onload = () => {
 		const loaderLine = document.getElementById('loaderLine');
 
 		loaderLine.style.width = '29vw';
-		loaderLine.style.backgroundColor = '#2A1315';
+		loaderLine.style.backgroundColor = '#5C7A92';
 
 		let loader = anime({
 			targets: '#loader input',
 			round: 1,
 			easing: 'linear',
 			value: 100,
-			duration: 5000,
+			duration: 2500,
 			complete: () => {
 				basecampTextAnimation();
 			}
@@ -38,7 +38,7 @@ window.onload = () => {
 
 		setTimeout(() => {
 			loader.style.display = 'none';
-		}, 3000);
+		}, 2500);
 
 		loader.style.transform = 'translateY(30vh)';
 		loader.style.opacity = 0;
@@ -46,7 +46,7 @@ window.onload = () => {
 		// Calling other elements to enter
 		mainPage();
 
-		// Main animation timeline
+		/*// Main animation timeline
 		const basecampText = anime.timeline();
 
 		basecampText
@@ -56,7 +56,7 @@ window.onload = () => {
 				targets: '#heroSvg .gSvg path',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
-				strokeWidth: 0.8,
+				strokeWidth: .8,
 				duration: 1500,
 				delay: (el, i) => { return i * 200 + 2000 },
 				offset: 0
@@ -84,7 +84,7 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg',
 				scale: 1
-			});
+			});*/
 	}
 
 
@@ -100,8 +100,8 @@ window.onload = () => {
 		/* Start audio mute */
 
 
-		document.getElementById('vid').play();
-		document.getElementById('aud').play();
+		//document.getElementById('vid').play();
+		//document.getElementById('aud').play();
 
 		const muteToggle = document.getElementById('audioSvg');
 
@@ -221,6 +221,15 @@ window.onload = () => {
 			easing: 'quart.out'
 		});
 
+		const logoEntrance = new mojs.Html({
+			el: '#logoSvgContainer',
+			y: { '3vh': 0 },
+			opacity: { 0: 1 },
+			delay: 2500,
+			duration: 4000,
+			easing: 'quart.out'
+		});
+
 		// Entrance animation timeline
 		const menuAnimation = new mojs.Timeline();
 
@@ -229,7 +238,8 @@ window.onload = () => {
 			menuEntrance3,
 			menuEntrance4,
 			audioEntrance,
-			audioLabelEntrance).play();
+			audioLabelEntrance,
+			logoEntrance).play();
 
 
 		/* End entrance animations */

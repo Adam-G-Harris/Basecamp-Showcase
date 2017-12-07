@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #2A1315;
+  background-color: #5C7A92;
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
 }
 
@@ -18,8 +18,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
-  transition: opacity 3s linear, transform 3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  z-index: 10;
+  transition: opacity 2.5s linear, transform 2.5s cubic-bezier(0.6, 0.1, 0.6, 1);
 }
 
 #loader input {
@@ -37,7 +37,7 @@ body {
   background-color: white;
   position: absolute;
   top: 55vh;
-  transition: width 5s linear, background-color 5s linear;
+  transition: width 2.5s linear, background-color 2.5s linear;
 }
 
 #loader #loaderLineLeft {
@@ -63,43 +63,16 @@ body {
 }
 
 /*-------------------------- Main video page --------------------------*/
-#mainPage {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: -2;
-}
-
-#mainPage #heroVideoAndAudioContainer {
-  width: inherit;
-  position: absolute;
-}
-
-#mainPage #heroVideoAndAudioContainer video {
-  width: inherit;
-  background-size: cover;
-}
-
-#mainPage #basecampSvgContainer {
-  position: absolute;
-  right: 15px;
-  bottom: 20px;
-}
-
-#mainPage #basecampSvgContainer #heroSvg {
-  width: auto;
-  height: 2rem;
-}
-
-#mainPage #svgWrapper {
+#svgWrapper {
   height: inherit;
+  z-index: 9;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#mainPage #svgWrapper #audioSvg {
+#svgWrapper #audioSvg {
   position: absolute;
   left: 10px;
   top: calc(100vh - 70px);
@@ -108,12 +81,36 @@ body {
   color: white;
 }
 
-#mainPage #svgWrapper #audioSvg .dontShow {
+#svgWrapper #audioSvg .dontShow {
   display: none;
 }
 
-#mainPage #svgWrapper #audioSvg:hover {
+#svgWrapper #audioSvg:hover {
   cursor: pointer;
+}
+
+/*-------------------------- Page 1 Section 1 --------------------------*/
+#mainPage {
+  width: 100vw;
+  height: 100vh;
+}
+
+#mainPage #heroVideoAndAudioContainer {
+  width: inherit;
+  position: absolute;
+  background-color: #7995AC;
+  opacity: 0.7;
+}
+
+#mainPage #heroVideoAndAudioContainer video {
+  width: inherit;
+  background-size: cover;
+}
+
+#mainPage #logoSvgContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
 }
 
 #mainPage #audio {
@@ -148,7 +145,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 11;
   height: 3rem;
   width: 8rem;
 }
@@ -180,7 +176,7 @@ body {
 }
 
 #mainPage #menu svg {
-  z-index: 12;
+  z-index: 1;
 }
 
 #mainPage #menu svg:hover .svgShape {
@@ -188,6 +184,14 @@ body {
   stroke-opacity: 1;
   stroke-dasharray: 1rem 10rem;
   stroke-dashoffset: -20rem;
+}
+
+/*-------------------------- Page 1 Section 2 --------------------------*/
+#mainPage2 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2A1315;
 }
  
 
