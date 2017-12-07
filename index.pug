@@ -9,8 +9,6 @@ html(lang="en")
 		link(rel="stylesheet", href="Style/style.css")
 		link(rel="shortcut icon", href="Assets/Images/Basecamp_Favicon.ico", type="image/x-icon")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.2/mo.min.js", defer)
-		//-script(src="https://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js", defer)
-		//-script(src="https://cdn.jsdelivr.net/mojs-curve-editor/latest/mojs-curve-editor.min.js", defer)
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js", defer)
 		script(src="Script/script.js")
 		title Basecamp
@@ -24,26 +22,6 @@ html(lang="en")
 			#loaderLine
 			#loaderLineLeft
 			#loaderLineRight
-
-		#svgWrapper
-
-			//- Audio displays
-			svg(id='audioSvg' viewBox="0 0 44 44")
-
-				g(id="unmuted" fill='white' fill-opacity='0.05' fill-rule='evenodd' stroke-width="0.4" stroke="white")
-
-					//- Unmuted audio
-					polygon(points="0 0 44 0 44 44 0 44")
-					path(d="M12,33.978997 C16.8220287,33.3263323 20.155362,33 22,33 C24.766957,33 32,33.978997 32,33.978997")
-					path(d="M8,24 C14.7558905,22.6666667 19.4225572,22 22,22 C25.8661642,22 36,24 36,24")
-					path(d="M4,13.5 C12.6877589,11.5 18.6877589,10.5 22,10.5 C26.9683616,10.5 40,13.5 40,13.5")
-
-				g(id="muted" class='dontShow' fill='none' fill-rule='evenodd' stroke-width="0.4" stroke="white")
-
-					//- Muted audio
-					polygon(points="0 0 44 0 44 44 0 44")
-					path(d="M3.5,3.5 L39.5,40.5")
-					path(d="M3.5,40.5 L40.5,3.5")
 
 		#mainPage
 
@@ -67,7 +45,7 @@ html(lang="en")
 				//- Center Basecamp text
 				svg(id='heroSvg' viewBox='0 0 400 61')
 
-					g(class='gSvg' fill='none' fill-rule='evenodd' stroke='white' stroke-width='10')
+					g(class='gSvg' fill='none' fill-rule='evenodd' stroke='white' stroke-width='4')
 
 						//- Basecamp
 						path(class='baseGroup singlePath full' d="M9.191428,7.688 L23.015428,7.688 C24.8927707,7.688 26.727419,7.87999808 28.519428,8.264 C30.311437,8.64800192 31.911421,9.27732896 33.319428,10.152 C34.727435,11.026671 35.868757,12.167993 36.743428,13.576 C37.618099,14.984007 38.055428,16.7333229 38.055428,18.824 C38.055428,21.4693466 37.3407685,23.6559914 35.911428,25.384 C34.4820875,27.1120086 32.5514402,28.338663 30.119428,29.064 L30.119428,29.192 C31.5701019,29.3200006 32.924755,29.6933302 34.183428,30.312 C35.442101,30.9306698 36.5300901,31.7306618 37.447428,32.712 C38.3647659,33.6933382 39.0794254,34.8346602 39.591428,36.136 C40.1034306,37.4373398 40.359428,38.8346592 40.359428,40.328 C40.359428,42.8453459 39.8367666,44.9146586 38.791428,46.536 C37.7460894,48.1573414 36.3807698,49.4479952 34.695428,50.408 C33.0100862,51.3680048 31.1114386,52.0399981 28.999428,52.424 C26.8874174,52.8080019 24.7861051,53 22.695428,53 L9.191428,53 L9.191428,7.688 Z ")
@@ -89,16 +67,14 @@ html(lang="en")
 						//- Center line in Basecamp
 						polyline(id='centerLine' points="185.5 0 185.5 61")
 
-			#audio
+			#volumeControlContainer
 
-				p A
-				p U
-				p D
-				p I
-				p O
+				input(id='volumeControl' type='range' min='0' max='1' value='.5' step='.1')
 
 			#menu
 
-				p Home
-				p Music
-				p About
+				p.insetBorder Home
+				.lineBetween
+				p.insetBorder Music
+				.lineBetween
+				p.insetBorder About

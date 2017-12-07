@@ -1,12 +1,14 @@
 window.onload = () => {
 
 
-	/* Start loading animation */
+	/* Start loading page */
 
 
 	; (function () {
 
-		const loaderLine = document.getElementById('loaderLine');
+		basecampTextAnimation(); // TEMPTEMP TEMPTEMP TEMPTEMP ---------------------------
+
+		/*const loaderLine = document.getElementById('loaderLine');
 
 		loaderLine.style.width = '29vw';
 
@@ -19,12 +21,12 @@ window.onload = () => {
 			complete: () => {
 				basecampTextAnimation();
 			}
-		});
+		});*/
 
 	})()
 
 
-	/* End loading animation */
+	/* End loading page */
 
 
 	/* Start Basecamp text */
@@ -32,12 +34,12 @@ window.onload = () => {
 
 	function basecampTextAnimation() {
 
-		// Loading animation transition
+		/*// Loading animation transition
 		const loader = document.getElementById('loader');
 
 		setTimeout(() => {
 			loader.style.display = 'none';
-		}, 2500);
+		}, 2500);*/
 
 		loader.style.opacity = 0;
 
@@ -95,30 +97,22 @@ window.onload = () => {
 	function mainPage() {
 
 
-		/* Start audio mute */
+		/* Start audio controller */
 
 
-		document.getElementById('vid').play();
-		document.getElementById('aud').play();
+		const mainVideo = document.getElementById('vid');
+		const mainAudio = document.getElementById('aud');
+		//mainVideo.play();
+		mainAudio.play();
 
-		const muteToggle = document.getElementById('audioSvg');
-
-		muteToggle.addEventListener('click', changeVolume);
-
-		function changeVolume() {
-
-			const muteAffected = document.getElementById('aud');
-			const unmuted = document.getElementById('unmuted');
-			const muted = document.getElementById('muted');
-
-			muted.classList.toggle('dontShow');
-			unmuted.classList.toggle('dontShow');
-
-			muteAffected.volume === 1 ? muteAffected.volume = 0 : muteAffected.volume = 1;
-		}
+		const volumeRange = document.getElementById('volumeControl');
+		volumeRange.addEventListener('change', changeVolume);
 
 
-		/* End audio mute */
+		/* End audio controller */
+
+
+		/* Start box menu */
 
 
 		// Used for positioning
@@ -140,55 +134,40 @@ window.onload = () => {
 			isShowStart: true
 		};
 
-		// Menu parts
-		let sqrTL = new mojs.Shape({
+		const sqrTL = new mojs.Shape({
 			...SQUARE,
 			x: lPos,
 			y: sPos,
 		});
 
-		let sqrTR = new mojs.Shape({
+		const sqrTR = new mojs.Shape({
 			...SQUARE,
 			x: sPos,
 			y: sPos,
 		});
 
-		let sqrBL = new mojs.Shape({
+		const sqrBL = new mojs.Shape({
 			...SQUARE,
 			x: lPos,
 			y: lPos,
 		});
 
-		let sqrBR = new mojs.Shape({
+		const sqrBR = new mojs.Shape({
 			...SQUARE,
 			x: sPos,
 			y: lPos
 		});
 
 
+		/* End box menu  */
+
+
 		/* Start entrance animations */
+
 
 		const menuEntrance = new mojs.Html({
 			el: '#menu',
 			x: { '1vw': 0 },
-			opacity: { 0: 1 },
-			delay: 2500,
-			duration: 2000,
-			easing: 'quart.out'
-		});
-
-		const audioEntrance = new mojs.Html({
-			el: '#audio',
-			x: { '-3vw': 0 },
-			opacity: { 0: 1 },
-			delay: 2500,
-			duration: 2000,
-			easing: 'quart.out'
-		});
-
-		const audioLabelEntrance = new mojs.Html({
-			el: '#audioSvg',
-			y: { '3vh': 0 },
 			opacity: { 0: 1 },
 			delay: 2500,
 			duration: 2000,
@@ -209,8 +188,6 @@ window.onload = () => {
 
 		menuAnimation.add(
 			menuEntrance,
-			audioEntrance,
-			audioLabelEntrance,
 			logoEntrance
 		).play();
 
