@@ -102,11 +102,16 @@ window.onload = () => {
 
 		const mainVideo = document.getElementById('vid');
 		const mainAudio = document.getElementById('aud');
+		const volumeRange = document.getElementById('volumeControl');
+
+		volumeRange.addEventListener('input', changeVolume);
+		mainAudio.volume = volumeRange.value;
 		//mainVideo.play();
 		mainAudio.play();
 
-		const volumeRange = document.getElementById('volumeControl');
-		volumeRange.addEventListener('change', changeVolume);
+		function changeVolume() {
+			mainAudio.volume = volumeRange.value;
+		}
 
 
 		/* End audio controller */
