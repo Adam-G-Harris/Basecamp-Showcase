@@ -6,9 +6,9 @@ window.onload = () => {
 
 	; (function () {
 
-		basecampTextAnimation(); // TEMPTEMP TEMPTEMP TEMPTEMP ---------------------------
+		//basecampTextAnimation(); // TEMPTEMP TEMPTEMP TEMPTEMP ---------------------------
 
-		/*const loaderLine = document.getElementById('loaderLine');
+		const loaderLine = document.getElementById('loaderLine');
 
 		loaderLine.style.width = '29vw';
 
@@ -21,7 +21,7 @@ window.onload = () => {
 			complete: () => {
 				basecampTextAnimation();
 			}
-		});*/
+		});
 
 	})()
 
@@ -34,14 +34,14 @@ window.onload = () => {
 
 	function basecampTextAnimation() {
 
-		/*// Loading animation transition
+		// Loading animation transition
 		const loader = document.getElementById('loader');
 
 		setTimeout(() => {
 			loader.style.display = 'none';
 		}, 2500);
 
-		loader.style.opacity = 0;*/
+		loader.style.opacity = 0;
 
 		// Calling other elements to enter
 		mainPage();

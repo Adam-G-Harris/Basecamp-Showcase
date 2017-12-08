@@ -53,8 +53,7 @@ body {
 	z-index: 10;
 	background-color: black;
 	transition: opacity 1s linear;
-	//display: flex;
-	display: none;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 
@@ -133,7 +132,7 @@ body {
 
 	#volumeControlContainer {
 		position: absolute;
-		z-index: 10;
+		z-index: 9;
 		left: 10px;
 		bottom: 20px;
 	}
