@@ -39,15 +39,16 @@ window.onload = () => {
 
 		setTimeout(() => {
 			loader.style.display = 'none';
-		}, 2500);*/
+		}, 2500);
 
-		loader.style.opacity = 0;
+		loader.style.opacity = 0;*/
 
 		// Calling other elements to enter
 		mainPage();
 
 		// Main animation timeline
 		const basecampText = anime.timeline();
+		let durationTime = 1500;
 
 		basecampText
 
@@ -57,7 +58,7 @@ window.onload = () => {
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeInOutSine',
 				strokeWidth: .6,
-				duration: 1500,
+				duration: durationTime - 500,
 				delay: (el, i) => { return i * 200 + 2000 },
 				offset: 0
 			})
@@ -65,21 +66,21 @@ window.onload = () => {
 				targets: '#heroSvg #gPoly polyline',
 				strokeDashoffset: [anime.setDashoffset, 0],
 				easing: 'easeOutQuint',
-				duration: 2000
+				duration: durationTime
 			})
 			.add({
 				targets: '#heroSvg .baseGroup',
 				translateX: -5,
 				easing: 'easeOutQuint',
-				duration: 2000,
-				offset: '-=2000'
+				duration: durationTime,
+				offset: '-=1500'
 			})
 			.add({
 				targets: '#heroSvg .campGroup',
 				translateX: 5,
 				easing: 'easeOutQuint',
-				duration: 2000,
-				offset: '-=2000'
+				duration: durationTime,
+				offset: '-=1500'
 			})
 			.add({
 				targets: '#heroSvg',
@@ -107,7 +108,7 @@ window.onload = () => {
 		volumeRange.addEventListener('input', changeVolume);
 		mainAudio.volume = volumeRange.value;
 		//mainVideo.play();
-		mainAudio.play();
+		//mainAudio.play();
 
 		function changeVolume() {
 			mainAudio.volume = volumeRange.value;
