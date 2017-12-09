@@ -51,7 +51,7 @@ body {
 	height: 100vh;
 	position: absolute;
 	z-index: 10;
-	background-color: black;
+	background: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
 	transition: opacity 1s linear;
 	display: flex;
 	justify-content: center;
