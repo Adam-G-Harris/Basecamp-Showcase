@@ -6,21 +6,14 @@ window.onload = () => {
 
 	; (function () {
 
-		//basecampTextAnimation(); // TEMPTEMP TEMPTEMP TEMPTEMP ---------------------------
-
-		const loaderLine = document.getElementById('loaderLine');
-
-		loaderLine.style.width = '29vw';
-
-		let loader = anime({
-			targets: '#loader input',
-			round: 1,
-			easing: 'linear',
-			value: 100,
+		let temp = anime({
+			targets: '.loaderLetter',
 			duration: 2500,
-			complete: () => {
-				basecampTextAnimation();
-			}
+			delay: function (el, i) { return 250 * i },
+			easing: 'linear',
+			filter: ['blur(6px)', 'blur(3px)', 'blur(0px)'],
+			loop: 4,
+			direction: 'alternate'
 		});
 
 	})()
@@ -33,15 +26,6 @@ window.onload = () => {
 
 
 	function basecampTextAnimation() {
-
-		// Loading animation transition
-		const loader = document.getElementById('loader');
-
-		setTimeout(() => {
-			loader.style.display = 'none';
-		}, 2500);
-
-		loader.style.opacity = 0;
 
 		// Calling other elements to enter
 		mainPage();
