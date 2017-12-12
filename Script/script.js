@@ -28,6 +28,10 @@ window.onload = () => {
 			easing: 'easeOutQuint'
 		});
 
+		setTimeout(() => {
+			basecampTextAnimation();
+		}, 5000);
+
 	})()
 
 
