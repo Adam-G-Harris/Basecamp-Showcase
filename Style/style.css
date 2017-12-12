@@ -29,6 +29,10 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.noOpacity {
+  opacity: 0;
+}
+
 /*-------------------------- Loading screen --------------------------*/
 #loaderContainer {
   width: 100vw;
@@ -40,6 +44,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: opacity 4s 6.5s linear;
 }
 
 #loaderContainer #loaderLetterContainer span {

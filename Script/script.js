@@ -6,29 +6,24 @@ window.onload = () => {
 
 	; (function () {
 
-		/*const loaderBasecamp = anime({
-			targets: '.loaderLetter',
-			duration: 4000,
-			delay: function (el, i) { return 200 * i },
-			easing: 'linear',
-			filter: ['blur(0px)', 'blur(4px)', 'blur(0px)', 'blur(4px)'],
-			direction: 'alternate',
-		});*/
+		const loadingPage = document.getElementById('loaderContainer');
+
+		loadingPage.classList.add('noOpacity');
 
 		const leftSide = anime({
 			targets: '#loaderContainer #loaderAudio #leftSide',
-			delay: 2000,
-			duration: 2000,
-			translateX: [-20, 0],
+			delay: 2500,
+			duration: 2500,
+			translateX: [-10, 0],
 			opacity: [0, 1],
 			easing: 'easeOutQuint'
 		});
 
 		const rightSide = anime({
 			targets: '#loaderContainer #loaderAudio #rightSide',
-			delay: 2000,
-			duration: 2000,
-			translateX: [20, 0],
+			delay: 2500,
+			duration: 2500,
+			translateX: [10, 0],
 			opacity: [0, 1],
 			easing: 'easeOutQuint'
 		});
