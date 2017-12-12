@@ -17,21 +17,23 @@ html(lang="en")
 
 		#loaderContainer
 
-			#loaderLetterContainer
+			#loaderContent
 
-				span.loaderLetter B
-				span.loaderLetter A
-				span.loaderLetter S
-				span.loaderLetter E
-				span.loaderLetter C
-				span.loaderLetter A
-				span.loaderLetter M
-				span.loaderLetter P
+				#loaderLetterContainer
 
-			#loaderAudio
+					span.loaderLetter B
+					span.loaderLetter A
+					span.loaderLetter S
+					span.loaderLetter E
+					span.loaderLetter C
+					span.loaderLetter A
+					span.loaderLetter M
+					span.loaderLetter P
 
-				span#leftSide ENABLE
-				span#rightSide AUDIO
+				#loaderAudio
+
+					span#leftSide ENABLE
+					span#rightSide AUDIO
 
 		#mainPage
 
@@ -50,7 +52,7 @@ html(lang="en")
 							polyline(points="1.18651154 36.8440356 19.7008865 0.0715996564 37.8760763 36.8440356")
 							polyline(points="26.1900024 36.8440356 44.7043774 0.0715996564 62.8795672 36.8440356")
 
-			#basecampSvgContainer
+			//-#basecampSvgContainer
 
 				//- Center Basecamp text
 				svg(id='heroSvg' viewBox='0 0 400 61')
@@ -77,9 +79,7 @@ html(lang="en")
 						//- Center line in Basecamp
 						polyline(id='centerLine' points="185.5 0 185.5 61")
 
-			#volumeControlContainer
-
-				input(id='volumeControl' type='range' min='0' max='1' value='.05' step='.05')
+			canvas#volumeCanvas
 
 			#menu
 

@@ -60,40 +60,45 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: opacity 4s 6.5s linear;
+	transition: opacity 4s linear;
 
-	#loaderLetterContainer {
+	#loaderContent {
+		transition: opacity 2s 6s linear;
+		text-align: center;
 
-		span {
+		#loaderLetterContainer {
 
-			font-size: 1.3rem;
-			color: white;
-			margin: 0 10px;
+			span {
 
-			@for $i from 0 through 7 {
-				&:nth-child(#{$i + 1}) {
+				font-size: 1.3rem;
+				color: white;
+				margin: 0 10px;
 
-					filter: blur(0px);
-					animation: blur-text 1.5s (#{$i/5}s) infinite linear alternate;
+				@for $i from 0 through 7 {
+					&:nth-child(#{$i + 1}) {
+
+						filter: blur(0px);
+						animation: blur-text 1.5s (#{$i/5}s) 6 linear alternate;
+					}
 				}
 			}
 		}
-	}
 
-	#loaderAudio {
-		letter-spacing: 5px;
-		margin-top: 15px;
-		font-size: .8rem;
-		color: #838993;
+		#loaderAudio {
+			letter-spacing: 5px;
+			margin-top: 15px;
+			font-size: .8rem;
+			color: #838993;
 
-		#leftSide {
-			display: inline-block;
-			margin-right: 8px;
-		}
+			#leftSide {
+				display: inline-block;
+				margin-right: 8px;
+			}
 
-		#rightSide {
-			display: inline-block;
-			margin-left: 8px;
+			#rightSide {
+				display: inline-block;
+				margin-left: 8px;
+			}
 		}
 	}
 }
@@ -130,10 +135,14 @@ body {
 		right: 10px;
 	}
 
-	#volumeControlContainer {
+	#volumeCanvas {
 		position: absolute;
+		z-index: 0;
 		left: 10px;
 		bottom: 20px;
+		width: 40px;
+		height: 40px;
+		border: 1px solid white;
 	}
 
 	#menu {

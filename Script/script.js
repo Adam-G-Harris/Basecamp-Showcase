@@ -6,13 +6,13 @@ window.onload = () => {
 
 	; (function () {
 
-		const loadingPage = document.getElementById('loaderContainer');
+		const loadingPage = document.getElementById('loaderContent');
 
 		loadingPage.classList.add('noOpacity');
 
 		const leftSide = anime({
 			targets: '#loaderContainer #loaderAudio #leftSide',
-			delay: 2500,
+			delay: 2000,
 			duration: 2500,
 			translateX: [-10, 0],
 			opacity: [0, 1],
@@ -21,7 +21,7 @@ window.onload = () => {
 
 		const rightSide = anime({
 			targets: '#loaderContainer #loaderAudio #rightSide',
-			delay: 2500,
+			delay: 2000,
 			duration: 2500,
 			translateX: [10, 0],
 			opacity: [0, 1],
@@ -30,7 +30,7 @@ window.onload = () => {
 
 		setTimeout(() => {
 			basecampTextAnimation();
-		}, 5000);
+		}, 8000);
 
 	})()
 
@@ -43,10 +43,14 @@ window.onload = () => {
 
 	function basecampTextAnimation() {
 
+		const load = document.getElementById('loaderContainer');
+
+		load.classList.add('noOpacity');
+
 		// Calling other elements to enter
 		mainPage();
 
-		// Main animation timeline
+		/*// Main animation timeline
 		const basecampText = anime.timeline();
 		const durationTime = 1500;
 
@@ -85,7 +89,7 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg',
 				scale: 1
-			});
+			});*/
 	}
 
 
@@ -103,16 +107,11 @@ window.onload = () => {
 
 		const mainVideo = document.getElementById('vid');
 		const mainAudio = document.getElementById('aud');
-		const volumeRange = document.getElementById('volumeControl');
+		//const volumeCanvas = document.getElementById('volumeCanvas');
 
-		volumeRange.addEventListener('input', changeVolume);
-		mainAudio.volume = volumeRange.value;
+		//volumeCanvas.addEventListener('click', toggleVolume);
 		//mainVideo.play();
 		//mainAudio.play();
-
-		function changeVolume() {
-			mainAudio.volume = volumeRange.value;
-		}
 
 
 		/* End audio controller */
@@ -180,21 +179,11 @@ window.onload = () => {
 			easing: 'quart.out'
 		});
 
-		const logoEntrance = new mojs.Html({
-			el: '#logoSvgContainer',
-			y: { '3vh': 0 },
-			opacity: { 0: 1 },
-			delay: 2500,
-			duration: 2000,
-			easing: 'quart.out'
-		});
-
 		// Entrance animation timeline
 		const menuAnimation = new mojs.Timeline();
 
 		menuAnimation.add(
-			menuEntrance,
-			logoEntrance
+			menuEntrance
 		).play();
 
 

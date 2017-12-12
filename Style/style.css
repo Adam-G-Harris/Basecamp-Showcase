@@ -7,7 +7,6 @@
 body {
   background-color: black;
   font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
-  overflow: hidden;
 }
 
 /*-------------------------- Global reusable classes --------------------------*/
@@ -44,68 +43,73 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: opacity 4s 6.5s linear;
+  transition: opacity 4s linear;
 }
 
-#loaderContainer #loaderLetterContainer span {
+#loaderContainer #loaderContent {
+  transition: opacity 2s 6s linear;
+  text-align: center;
+}
+
+#loaderContainer #loaderContent #loaderLetterContainer span {
   font-size: 1.3rem;
   color: white;
   margin: 0 10px;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(1) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(1) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0s infinite linear alternate;
+  animation: blur-text 1.5s 0s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(2) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(2) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.2s infinite linear alternate;
+  animation: blur-text 1.5s 0.2s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(3) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(3) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.4s infinite linear alternate;
+  animation: blur-text 1.5s 0.4s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(4) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(4) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.6s infinite linear alternate;
+  animation: blur-text 1.5s 0.6s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(5) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(5) {
   filter: blur(0px);
-  animation: blur-text 1.5s 0.8s infinite linear alternate;
+  animation: blur-text 1.5s 0.8s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(6) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(6) {
   filter: blur(0px);
-  animation: blur-text 1.5s 1s infinite linear alternate;
+  animation: blur-text 1.5s 1s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(7) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(7) {
   filter: blur(0px);
-  animation: blur-text 1.5s 1.2s infinite linear alternate;
+  animation: blur-text 1.5s 1.2s 6 linear alternate;
 }
 
-#loaderContainer #loaderLetterContainer span:nth-child(8) {
+#loaderContainer #loaderContent #loaderLetterContainer span:nth-child(8) {
   filter: blur(0px);
-  animation: blur-text 1.5s 1.4s infinite linear alternate;
+  animation: blur-text 1.5s 1.4s 6 linear alternate;
 }
 
-#loaderContainer #loaderAudio {
+#loaderContainer #loaderContent #loaderAudio {
   letter-spacing: 5px;
   margin-top: 15px;
   font-size: .8rem;
   color: #838993;
 }
 
-#loaderContainer #loaderAudio #leftSide {
+#loaderContainer #loaderContent #loaderAudio #leftSide {
   display: inline-block;
   margin-right: 8px;
 }
 
-#loaderContainer #loaderAudio #rightSide {
+#loaderContainer #loaderContent #loaderAudio #rightSide {
   display: inline-block;
   margin-left: 8px;
 }
@@ -140,10 +144,14 @@ body {
   right: 10px;
 }
 
-#mainPage #volumeControlContainer {
+#mainPage #volumeCanvas {
   position: absolute;
+  z-index: 0;
   left: 10px;
   bottom: 20px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
 }
 
 #mainPage #menu {
