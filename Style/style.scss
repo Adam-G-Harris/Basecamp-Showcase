@@ -1,5 +1,5 @@
 $grey-light: #928E94;
-$grey-dark: #5D5C61;
+$grey-dark: #838993;
 $blue-light: #7995AC;
 $blue-dark: #5C7A92;
 $purple-light: #7F697A;
@@ -88,7 +88,7 @@ body {
 			letter-spacing: 5px;
 			margin-top: 15px;
 			font-size: .8rem;
-			color: #838993;
+			color: $grey-dark;
 
 			#leftSide {
 				display: inline-block;
