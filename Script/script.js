@@ -6,14 +6,31 @@ window.onload = () => {
 
 	; (function () {
 
-		let temp = anime({
+		/*const loaderBasecamp = anime({
 			targets: '.loaderLetter',
-			duration: 2500,
-			delay: function (el, i) { return 250 * i },
+			duration: 4000,
+			delay: function (el, i) { return 200 * i },
 			easing: 'linear',
-			filter: ['blur(6px)', 'blur(3px)', 'blur(0px)'],
-			loop: 4,
-			direction: 'alternate'
+			filter: ['blur(0px)', 'blur(4px)', 'blur(0px)', 'blur(4px)'],
+			direction: 'alternate',
+		});*/
+
+		const leftSide = anime({
+			targets: '#loaderContainer #loaderAudio #leftSide',
+			delay: 2000,
+			duration: 2000,
+			translateX: [-20, 0],
+			opacity: [0, 1],
+			easing: 'easeOutQuint'
+		});
+
+		const rightSide = anime({
+			targets: '#loaderContainer #loaderAudio #rightSide',
+			delay: 2000,
+			duration: 2000,
+			translateX: [20, 0],
+			opacity: [0, 1],
+			easing: 'easeOutQuint'
 		});
 
 	})()
@@ -32,7 +49,7 @@ window.onload = () => {
 
 		// Main animation timeline
 		const basecampText = anime.timeline();
-		let durationTime = 1500;
+		const durationTime = 1500;
 
 		basecampText
 
@@ -57,14 +74,14 @@ window.onload = () => {
 				translateX: -5,
 				easing: 'easeOutQuint',
 				duration: durationTime,
-				offset: '-=1500'
+				offset: `-=${durationTime}`
 			})
 			.add({
 				targets: '#heroSvg .campGroup',
 				translateX: 5,
 				easing: 'easeOutQuint',
 				duration: durationTime,
-				offset: '-=1500'
+				offset: `-=${durationTime}`
 			})
 			.add({
 				targets: '#heroSvg',

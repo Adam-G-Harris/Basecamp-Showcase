@@ -52,11 +52,45 @@ body {
 	background-color: black;
 	position: absolute;
 	z-index: 1;
-	color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	#loaderLetterContainer {
+
+		span {
+
+			font-size: 1.3rem;
+			color: white;
+			margin: 0 10px;
+
+			@for $i from 0 through 7 {
+				&:nth-child(#{$i + 1}) {
+
+					filter: blur(0px);
+					animation: blur-text 1.5s (#{$i/5}s) infinite linear alternate;
+				}
+			}
+		}
+	}
+
+	#loaderAudio {
+		letter-spacing: 5px;
+		margin-top: 15px;
+		font-size: .8rem;
+		color: #838993;
+
+		#leftSide {
+			display: inline-block;
+			margin-right: 8px;
+		}
+
+		#rightSide {
+			display: inline-block;
+			margin-left: 8px;
+		}
+	}
 }
 
 
@@ -116,4 +150,13 @@ body {
 			letter-spacing: 2px;
 		}
 	}
+}
+
+
+/*-------------------------- CSS Animations --------------------------*/
+
+
+@keyframes blur-text {
+	0% {filter: blur(0px);}
+	100% {filter: blur(4px);}
 }
