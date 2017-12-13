@@ -47,6 +47,10 @@ window.onload = () => {
 
 		load.classList.add('noOpacity');
 
+		setTimeout(() => {
+			load.style.display = 'none';
+		}, 4000);
+
 		// Calling other elements to enter
 		mainPage();
 
@@ -105,13 +109,27 @@ window.onload = () => {
 		/* Start audio controller */
 
 
+		const circleLines = document.querySelectorAll('.audioLines');
+		const circle = document.querySelector('#audioIcon');
 		const mainVideo = document.getElementById('vid');
 		const mainAudio = document.getElementById('aud');
-		//const volumeCanvas = document.getElementById('volumeCanvas');
-
-		//volumeCanvas.addEventListener('click', toggleVolume);
+		//mainAudio.volume = .1;
 		//mainVideo.play();
 		//mainAudio.play();
+
+		circle.addEventListener('click', audioToggle);
+
+		function audioToggle() {
+
+			mainAudio.volume === .1 ?
+				mainAudio.volume = 0 :
+				mainAudio.volume = .1;
+
+			for (let i = 0; i < circleLines.length; i++) {
+
+				circleLines[i].classList.toggle('volumeChanges');
+			}
+		}
 
 
 		/* End audio controller */
