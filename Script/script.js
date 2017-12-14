@@ -190,10 +190,10 @@ window.onload = () => {
 
 		const menuEntrance = new mojs.Html({
 			el: '#menu',
-			x: { '1vw': 0 },
+			x: { '3vw': 0 },
 			opacity: { 0: 1 },
-			delay: 2500,
-			duration: 2000,
+			delay: 2000,
+			duration: 4000,
 			easing: 'quart.out'
 		});
 
