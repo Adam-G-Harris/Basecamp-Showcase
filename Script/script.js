@@ -54,7 +54,7 @@ window.onload = () => {
 		// Calling other elements to enter
 		mainPage();
 
-		/*// Main animation timeline
+		// Main animation timeline
 		const basecampText = anime.timeline();
 		const durationTime = 1500;
 
@@ -64,9 +64,9 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg .gSvg path',
 				strokeDashoffset: [anime.setDashoffset, 0],
-				easing: 'easeInOutSine',
-				strokeWidth: .6,
-				duration: durationTime - 500,
+				easing: 'easeInOutQuart',
+				strokeWidth: .4,
+				duration: durationTime,
 				delay: (el, i) => { return i * 200 + 2000 },
 				offset: 0
 			})
@@ -93,7 +93,7 @@ window.onload = () => {
 			.add({
 				targets: '#heroSvg',
 				scale: 1
-			});*/
+			});
 	}
 
 
@@ -113,9 +113,9 @@ window.onload = () => {
 		const circle = document.querySelector('#audioIcon');
 		const mainVideo = document.getElementById('vid');
 		const mainAudio = document.getElementById('aud');
-		//mainAudio.volume = .1;
-		//mainVideo.play();
-		//mainAudio.play();
+		mainAudio.volume = .1;
+		mainVideo.play();
+		mainAudio.play();
 
 		circle.addEventListener('click', audioToggle);
 
@@ -133,56 +133,6 @@ window.onload = () => {
 
 
 		/* End audio controller */
-
-
-		/* Start box menu */
-
-
-		// Used for positioning
-		const spacing = 150;
-		const sqrSize = spacing / 26;
-		const lPos = `${spacing * 2}%`;
-		const sPos = `${spacing}%`;
-
-		// Menu parts constructor
-		const SQUARE = {
-			shape: 'rect',
-			left: '0',
-			top: '0',
-			radius: sqrSize,
-			fill: 'white',
-			fillOpacity: .1,
-			stroke: 'white',
-			strokeWidth: 0.4,
-			isShowStart: true
-		};
-
-		const sqrTL = new mojs.Shape({
-			...SQUARE,
-			x: lPos,
-			y: sPos,
-		});
-
-		const sqrTR = new mojs.Shape({
-			...SQUARE,
-			x: sPos,
-			y: sPos,
-		});
-
-		const sqrBL = new mojs.Shape({
-			...SQUARE,
-			x: lPos,
-			y: lPos,
-		});
-
-		const sqrBR = new mojs.Shape({
-			...SQUARE,
-			x: sPos,
-			y: lPos
-		});
-
-
-		/* End box menu  */
 
 
 		/* Start entrance animations */
